@@ -7,7 +7,7 @@ published: false
 
 ## Host Machine Setup
 
-### Step 1. On your Linux host machine, install ruby and rubygems.
+### 1. On your Linux host machine, install ruby and rubygems.
 
 For Fedora 17:
  
@@ -20,7 +20,7 @@ For Ubuntu 12.04:
     sudo apt-get install ruby
     sudo apt-get install rubygems
     
-### Step 2. Install VirtualBox
+### 2. Install VirtualBox
 
 For Fedora 17:
 
@@ -31,7 +31,7 @@ As seen at http://www.zealfortechnology.com/2012/06/install-oracle-virtualbox-on
     sudo yum install dkms
     sudo yum install VirtualBox4.2
 
-### Step 3. Install and Setup Vagrant
+### 3. Install and Setup Vagrant
 
 As seen at http://samrat.me/blog/2012/05/flask-nginx-gunicornon-a-vagrant-box/
 
