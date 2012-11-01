@@ -1,6 +1,6 @@
 ---
 layout: article
-title: Map Tiles with TileStache + Vagrant + NGINX + Gunicorn
+title: Serving Map Tiles from TileStache with Vagrant, NGINX, and Gunicorn
 abstract: How I got it all up and running
 author_twitter: hydrologee
 author: James Seppi
@@ -8,8 +8,6 @@ categories:
 - articles
 published: true
 ---
-
-# Serving Map Tiles from TileStache with Vagrant, NGINX, and Gunicorn
 
 ## Host Machine Setup
 
