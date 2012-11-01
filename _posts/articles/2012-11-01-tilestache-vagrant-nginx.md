@@ -1,6 +1,12 @@
 ---
-layout: default
-published: false
+layout: article
+title: Serving Map Tiles from TileStache with Vagrant, NGINX, and Gunicorn
+abstract: How I got it all up and running
+author_twitter: _hydrologee
+author: James Seppi
+categories:
+- articles
+published: true
 ---
 
 # Serving Map Tiles from TileStache with Vagrant, NGINX, and Gunicorn
@@ -44,10 +50,7 @@ As seen at http://samrat.me/blog/2012/05/flask-nginx-gunicornon-a-vagrant-box/
 
 
 
-
-
-
--------------
+**************
 
 ## Sources:
 * http://samrat.me/blog/2012/05/flask-nginx-gunicornon-a-vagrant-box/
