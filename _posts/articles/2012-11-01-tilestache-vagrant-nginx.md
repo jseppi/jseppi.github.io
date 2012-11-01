@@ -40,6 +40,8 @@ As seen at http://samrat.me/blog/2012/05/flask-nginx-gunicornon-a-vagrant-box/
     vagrant init
     vagrant up
 
+## Guest Vagrant Box Setup
+
 
 
 
