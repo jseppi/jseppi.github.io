@@ -18,7 +18,6 @@ For Fedora 17:
     sudo yum install ruby
     sudo yum install rubygems
 
-
 For Ubuntu 12.04:
 
     sudo apt-get install ruby
