@@ -297,6 +297,11 @@ Full-Width Styles
   padding: 50px 10px 30px 10px;
 }
 
+header.intro h2 {
+  font-size: 24px;
+  color: #666;
+}
+
 #project_title {
   margin: 0;
   color: #fff;
