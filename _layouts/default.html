@@ -7,24 +7,39 @@
   <title>Development Notes from James Seppi</title>
   <link rel='shortcut icon' href='{{site.baseurl}}/images/favicon.ico' type='image/x-icon' />
   <link rel='stylesheet' href='{{site.baseurl}}/fonts/open-sans.css'>
-  <link rel='stylesheet' href='{{site.baseurl}}/app.css'>
+  <!--<link rel='stylesheet' href='{{site.baseurl}}/app.css'>-->
+
+  <link rel="stylesheet" type="text/css" media="screen" href="{{site.baseurl}}/stylesheets/stylesheet.css">
 </head>
 <body>
-  <div id='container'>
+  
 
-    <div id="header">
-      <div class="navigation">
-        <a href="{{site.baseurl}}" class="title">Development Notes from James Seppi</a>
-      </div>
+    <div id="header_wrap" class="outer">
+      <header class="inner">
+      
+        <h1 id="project_title">jseppi</h1>
+        <h2 id="project_tagline"><a href="{{site.baseurl}}" class="title">Development Notes from James Seppi</a></h2>
+        <!--<section id="downloads">
+            <a class="zip_download_link" href="#">Download this project as a .zip file</a>
+            <a class="tar_download_link" href="#">Download this project as a tar.gz file</a>
+          </section>-->
+      </header>
     </div>
 
-    <div id='main'>{{content}}</div>
+
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        {{content}}
+      </section>
+    </div>
+
+
+  <div id='footer_wrap' class="outer">
+    <footer class="inner">
+      <p>Slate theme by <a href="https://github.com/jsncostello">Jason Costello</a></p>
+      <p>GitHub Page built from <a href="http://github.com/prose/bootstrap">prose-bootstrap</a></p>
+    </footer>
   </div>
 
-  <div id='footer'>
-    <div class="footer-content">
-      GitHub Page built from <a href="http://github.com/prose/bootstrap">prose-bootstrap</a>
-    </div>
-  </div>
 </body>
 </html>
