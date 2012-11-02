@@ -52,13 +52,13 @@ As seen at [http://samrat.me/blog/2012/05/flask-nginx-gunicornon-a-vagrant-box/]
 First we install the vagrant gem and download a base vagrant box (the VirtualBox) from which we'll build our virtual machine.  For a list of available boxes, see [http://www.vagrantbox.es/](http://www.vagrantbox.es/)
 
     sudo gem install vagrant
-    vagrant box add base http://files.vagrantup.com/precise32.box
+    vagrant box add precise32 http://files.vagrantup.com/precise32.box
     
 The next command will create a "Vagrantfile" in your current working directory, so first `cd` to where you want your installation to go.
 
-    vagrant init
+    vagrant init precise32
 
-Open the newly created "Vagrantfile" and uncomment the line `config.vm.network :hostonly, "192.168.33.10"` (near or at line 23).  You may also specify an address of your choosing instead of the default.
+Open the newly created "Vagrantfile" in your preferred text editor and uncomment the line `config.vm.network :hostonly, "192.168.33.10"` (near or at line 23).  You may also specify an address of your choosing instead of the default.
 
 Note if you'd like to use a bridged network connection, uncomment the `config.vm.network :bridged` line instead (near or at line 28)
 
@@ -68,12 +68,16 @@ Now we can start our guest vagrant box
 
     vagrant up
 
-
 ## NGINX and TileStache on the Guest Vagrant Box
 
 Now that we have the host machine setup and running our guest Vagrant virtual machine, we can get to setting up TileStache and NGINX.
 
-### 1. 
+### 1. Install software and libraries
+
+
+
+
+To be continued...
 
 **************
 
