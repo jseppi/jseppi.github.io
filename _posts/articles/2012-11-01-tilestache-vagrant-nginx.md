@@ -20,36 +20,36 @@ First we have to get the host Linux machine setup.  This is the machine from whi
 
 For Fedora 17:
  
-    sudo yum install ruby
-    sudo yum install rubygems
-
+    sudo yum install ruby rubygems
+    
 For Ubuntu 12.04:
 
-    sudo apt-get install ruby
-    sudo apt-get install rubygems
+    sudo apt-get install ruby rubygems
     
 ### 2. Install VirtualBox
 
 For Fedora 17:
 
-As seen at [http://www.zealfortechnology.com/2012/06/install-oracle-virtualbox-on-fedora.html](http://www.zealfortechnology.com/2012/06/install-oracle-virtualbox-on-fedora.html)
+As seen at [http://www.zealfortechnology.com/2012/06/install-oracle-virtualbox-on-fedora.html](http://www.zealfortechnology.com/2012/06/install-oracle-virtualbox-on-fedora.html).
     
     curl http://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo > virtualbox.repo
     sudo mv virtualbox.repo /etc/yum/repos.d/
     sudo yum install dkms
     sudo yum install VirtualBox4.2
 
+Note: You might also need to `sudo yum install ruby-devel gcc`
+
 For Ubuntu 12.04:
     
     sudo apt-get install virtualbox
 
-or you can download a newer version from [http://www.oracle.com/technetwork/server-storage/virtualbox/downloads/index.html](http://www.oracle.com/technetwork/server-storage/virtualbox/downloads/index.html)
+or you can download a newer version from [http://www.oracle.com/technetwork/server-storage/virtualbox/downloads/index.html](http://www.oracle.com/technetwork/server-storage/virtualbox/downloads/index.html).
 
 ### 3. Install and Setup Vagrant
 
-As seen at [http://samrat.me/blog/2012/05/flask-nginx-gunicornon-a-vagrant-box/](http://samrat.me/blog/2012/05/flask-nginx-gunicornon-a-vagrant-box/)
+As seen at [http://samrat.me/blog/2012/05/flask-nginx-gunicornon-a-vagrant-box/](http://samrat.me/blog/2012/05/flask-nginx-gunicornon-a-vagrant-box/).
 
-First we install the vagrant gem and download a base vagrant box (the VirtualBox) from which we'll build our virtual machine.  For a list of available boxes, see [http://www.vagrantbox.es/](http://www.vagrantbox.es/)
+First we install the vagrant gem and download a base vagrant box (the VirtualBox) from which we'll build our virtual machine.  For a list of available boxes, see [http://www.vagrantbox.es/](http://www.vagrantbox.es/).
 
     sudo gem install vagrant
     vagrant box add precise32 http://files.vagrantup.com/precise32.box
@@ -60,13 +60,19 @@ The next command will create a "Vagrantfile" in your current working directory, 
 
 Open the newly created "Vagrantfile" in your preferred text editor and uncomment the line `config.vm.network :hostonly, "192.168.33.10"` (near or at line 23).  You may also specify an address of your choosing instead of the default.
 
-Note if you'd like to use a bridged network connection, uncomment the `config.vm.network :bridged` line instead (near or at line 28)
+Note: If you'd like to use a bridged network connection, uncomment the `config.vm.network :bridged` line instead (near or at line 28).
 
 See [http://vagrantup.com/v1/docs/config/vm/network.html](http://vagrantup.com/v1/docs/config/vm/network.html) for details on the `config.vm.network` setting.
 
-Now we can start our guest vagrant box
+Now we can start our guest vagrant box:
 
     vagrant up
+
+Note: The first `vagrant up` might take a few minutes. Be patient!
+
+Other Notes:
+* If you need to change some settings in your "Vagrantfile", make sure to do `vagrant reload` 
+* The directory where your "Vagrantfile" is stored is a shared drive on your virtual machine!  From your virtual machine it can be accessed at `/vagrant`.
 
 ## NGINX and TileStache on the Guest Vagrant Box
 
@@ -74,7 +80,19 @@ Now that we have the host machine setup and running our guest Vagrant virtual ma
 
 ### 1. Install software and libraries
 
+First let's get into an ssh session on our virtual machine so that we can do stuff.
 
+    vagrant ssh
+
+Now we can start the installation fun!
+
+    sudo apt-get update
+    sudo apt-get install nginx python-pip python-imaging python-mapnik2 memcached 
+    sudo pip install virtualenvwrapper
+
+We are going to use virtualenvwrapper to manage our python libraries for our TileStache instance. So we need to create a new virtualenv.
+
+Note: python-imaging and python-mapnik2 are installed using `apt-get` to dist-packages because they do not play well with virtualenv.  If anyone knows how to get them to, please let me know!
 
 
 To be continued...
