@@ -37,7 +37,7 @@ As seen at [http://www.zealfortechnology.com/2012/06/install-oracle-virtualbox-o
 
 ### 3. Install and Setup Vagrant
 
-As seen at http://samrat.me/blog/2012/05/flask-nginx-gunicornon-a-vagrant-box/
+As seen at [http://samrat.me/blog/2012/05/flask-nginx-gunicornon-a-vagrant-box/](http://samrat.me/blog/2012/05/flask-nginx-gunicornon-a-vagrant-box/)
 
     sudo gem install vagrant
     vagrant box add base http://files.vagrantup.com/precise32.box
@@ -51,6 +51,6 @@ As seen at http://samrat.me/blog/2012/05/flask-nginx-gunicornon-a-vagrant-box/
 **************
 
 ## Sources:
-* http://samrat.me/blog/2012/05/flask-nginx-gunicornon-a-vagrant-box/
-* http://www.cleverkoala.com/2011/09/how-to-install-python-imaging-in-a-virtualenv-with-no-site-packages/
-* http://virtualenvwrapper.readthedocs.org/en/latest/command_ref.html#toggleglobalsitepackages
+* [http://samrat.me/blog/2012/05/flask-nginx-gunicornon-a-vagrant-box/](http://samrat.me/blog/2012/05/flask-nginx-gunicornon-a-vagrant-box/)
+* [http://www.cleverkoala.com/2011/09/how-to-install-python-imaging-in-a-virtualenv-with-no-site-packages/](http://www.cleverkoala.com/2011/09/how-to-install-python-imaging-in-a-virtualenv-with-no-site-packages/)
+* [http://virtualenvwrapper.readthedocs.org/en/latest/command_ref.html#toggleglobalsitepackages](http://virtualenvwrapper.readthedocs.org/en/latest/command_ref.html#toggleglobalsitepackages)
