@@ -52,4 +52,4 @@ As seen at [http://samrat.me/blog/2012/05/flask-nginx-gunicornon-a-vagrant-box/]
 ## Sources:
 * [http://samrat.me/blog/2012/05/flask-nginx-gunicornon-a-vagrant-box/](http://samrat.me/blog/2012/05/flask-nginx-gunicornon-a-vagrant-box/)
 * [http://www.cleverkoala.com/2011/09/how-to-install-python-imaging-in-a-virtualenv-with-no-site-packages/](http://www.cleverkoala.com/2011/09/how-to-install-python-imaging-in-a-virtualenv-with-no-site-packages/)
-* [http://virtualenvwrapper.readthedocs.org/en/latest/command_ref.html#toggleglobalsitepackages](http://virtualenvwrapper.readthedocs.org/en/latest/command_ref.html#toggleglobalsitepackages)
+* [http://virtualenvwrapper.readthedocs.org/en/latest/command_ref.html](http://virtualenvwrapper.readthedocs.org/en/latest/command_ref.html)
