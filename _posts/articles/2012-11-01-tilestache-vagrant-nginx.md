@@ -11,7 +11,7 @@ published: true
 
 ## Before You Start
 
-You're going to need a valid Mapnik XML file and some spatial data to serve as tiles.  I suggest using [TileMill](http://mapbox.com/tilemill/) to style your data and export the Mapnik XML.  Note that if you use TileMill, you'll have to edit the exported Mapnik XML so that the paths to the shapefiles are correct for the TileStache server we create here. You should also delete the \<Parameters\> section of your Mapnik XML because some earlier versions of Mapnik will error out if they encounter that section.
+You're going to need a valid Mapnik XML file and some spatial data to serve as tiles.  I suggest using [TileMill](http://mapbox.com/tilemill/) to style your data and export the Mapnik XML.  Note that if you use TileMill, you'll have to edit the exported Mapnik XML so that the paths to the shapefiles are correct for the TileStache server we create here. You should also delete the &lt;Parameters&gt; section of your Mapnik XML because some earlier versions of Mapnik will error out if they encounter that section.
 
 If you just want to get setup with a simple example, you can use [this zip file](/files/ts_countries.zip).
 
