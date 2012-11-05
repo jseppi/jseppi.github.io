@@ -78,7 +78,7 @@ Other Notes:
 
 Now that we have the host machine setup and running our guest Vagrant virtual machine, we can get to setting up TileStache and NGINX.
 
-### 1. Install software and libraries
+### 1. Install all kinds of stuff
 
 First let's get into an ssh session on our virtual machine so that we can do stuff.
 
@@ -88,12 +88,21 @@ Now we can start the installation fun!
 
     sudo apt-get update
     sudo apt-get install nginx python-pip python-imaging python-mapnik2 memcached 
+
+Note: memcached is optional, but it makes a nice caching provider for TileStache, so I'd recommend it.
+
+Note 2: python-imaging and python-mapnik2 are installed using `apt-get` to dist-packages because they do not play well with virtualenv.  If anyone knows how to get them to, please let me know!
+
+### 2. Create a virtualenv for your TileStache
+
+We are going to use virtualenvwrapper to manage our python packages for our TileStache instance. virtualenvwrapper allows us to use global python packages along with our virtualenv packages to get around the python-imaging and python-mapnik2 problem.
+
     sudo pip install virtualenvwrapper
+    source /usr/local/bin/virtualenvwrapper.sh
+    mkdir TileStacheServer
+    mkvirtualenv --no-site-packages TileStacheServer/
 
-We are going to use virtualenvwrapper to manage our python libraries for our TileStache instance. So we need to create a new virtualenv.
-
-Note: python-imaging and python-mapnik2 are installed using `apt-get` to dist-packages because they do not play well with virtualenv.  If anyone knows how to get them to, please let me know!
-
+See [http://blog.sidmitra.com/manage-multiple-projects-better-with-virtuale](http://blog.sidmitra.com/manage-multiple-projects-better-with-virtuale) for a more in-depth overview in setting up and using virtualenvwrapper
 
 To be continued...
 
@@ -104,6 +113,7 @@ To be continued...
 * [VirtualBox](http://virtualbox.org)
 * [TileStache](http://www.tilestache.org/)
 * [NGINX](http://nginx.org/en/)
+* [virtualenvwrapper](http://virtualenvwrapper.readthedocs.org/en/latest/command_ref.html)
 * [http://samrat.me/blog/2012/05/flask-nginx-gunicornon-a-vagrant-box/](http://samrat.me/blog/2012/05/flask-nginx-gunicornon-a-vagrant-box/)
-* [http://www.cleverkoala.com/2011/09/how-to-install-python-imaging-in-a-virtualenv-with-no-site-packages/](http://www.cleverkoala.com/2011/09/how-to-install-python-imaging-in-a-virtualenv-with-no-site-packages/)
-* [http://virtualenvwrapper.readthedocs.org/en/latest/command_ref.html](http://virtualenvwrapper.readthedocs.org/en/latest/command_ref.html)
+* [http://blog.sidmitra.com/manage-multiple-projects-better-with-virtuale](http://blog.sidmitra.com/manage-multiple-projects-better-with-virtuale)
+* 
