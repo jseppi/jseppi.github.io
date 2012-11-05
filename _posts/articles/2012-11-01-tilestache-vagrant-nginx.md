@@ -167,7 +167,7 @@ Restart nginx
 
 And run TileStache using gunicorn, making sure to specify your TileStache config file.  If you are using my example files and have unzipped them into `~/TileStacheServer/` it will look like this:
 
-    gunicorn -b 0.0.0.0:9001 "TileStache:WSGITileServer('~/TileStacheServer/tilestache.cfg')"
+    gunicorn -b 0.0.0.0:9001 "TileStache:WSGITileServer('/home/vagrant/TileStacheServer/tilestache.cfg')"
 
 ### 5. Test it out from your Host Machine
 
