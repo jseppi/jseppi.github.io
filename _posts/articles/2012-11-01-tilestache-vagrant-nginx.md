@@ -80,7 +80,7 @@ Now that we have the host machine setup and running our guest Vagrant virtual ma
 
 ### 1. Install all kinds of stuff
 
-First let's get into an ssh session on our virtual machine so that we can do stuff.
+First let's get into an ssh session on our vagrant box.
 
     vagrant ssh
 
@@ -101,6 +101,8 @@ We are going to use virtualenvwrapper to manage our python packages for our Tile
     source /usr/local/bin/virtualenvwrapper.sh
     mkdir TileStacheServer
     mkvirtualenv --no-site-packages TileStacheServer/
+
+You'll now be operating withing a virtualenv, as indicated by the name in parentheses at the start of your terminal prompt, ex `(TileStacheServer) root@precise32:/home/vagrant#`
 
 See [http://blog.sidmitra.com/manage-multiple-projects-better-with-virtuale](http://blog.sidmitra.com/manage-multiple-projects-better-with-virtuale) for a more in-depth overview in setting up and using virtualenvwrapper
 
