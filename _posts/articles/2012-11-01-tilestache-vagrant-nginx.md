@@ -9,6 +9,12 @@ categories:
 published: true
 ---
 
+## Before You Start
+
+You're going to need a valid Mapnik XML file and some spatial data to serve as tiles.  I suggest using [TileMill](http://mapbox.com/tilemill/) to style your data and export the Mapnik XML.  Note that if you use TileMill, you'll have to edit the exported Mapnik XML so that the paths to the shapefiles are correct for the TileStache server we create here. 
+
+If you just want to get setup with a simple example, you can use [this zip file](/files/ts_countries.zip).
+
 ## Host Machine Setup
 
 First we have to get the host Linux machine setup.  This is the machine from which we will run our Vagrant virtual box. If not already there, `cd` to your preferred working directory.
@@ -100,13 +106,51 @@ We are going to use virtualenvwrapper to manage our python packages for our Tile
     sudo pip install virtualenvwrapper
     source /usr/local/bin/virtualenvwrapper.sh
     mkdir TileStacheServer
+    cd TileStacheServer
     mkvirtualenv --no-site-packages TileStacheServer/
 
 You'll now be operating withing a virtualenv, as indicated by the name in parentheses at the start of your terminal prompt, ex `(TileStacheServer) root@precise32:/home/vagrant#`
 
+Note: Exit the current virtualenv by typing `deactivate`.  Resume the virtualenv by typing `workon TileStacheServer`.
+
 See [http://blog.sidmitra.com/manage-multiple-projects-better-with-virtuale](http://blog.sidmitra.com/manage-multiple-projects-better-with-virtuale) for a more in-depth overview in setting up and using virtualenvwrapper
 
-To be continued...
+### 3. Install python packages
+
+Now we can install the python packages we need to run TileStache
+
+    pip install tilestache modetmaps gunicorn python-memcached
+
+Note: python-memcached is only necessary if you want to use memcached as a cache provider for TileStache.
+
+And we also need to use virtualenvwrapper to toggle global site packages so we have access to PIL and Mapnik2
+
+    toggleglobalsitepackages    
+
+### 4. Run Your TileStacheServer
+
+gunicorn somethingsomething
+
+**************
+
+## Example TileStache Config Contents
+
+tilestache.cfg
+
+    {
+        "cache": {
+            "name": "memcached"
+        },
+        "layers": {
+            "countries": {
+                "provider": {
+                    "name": "mapnik",
+                    "mapfile": "Countries.xml"
+                }
+            }
+        }
+    }
+
 
 **************
 
