@@ -179,8 +179,6 @@ If you are using my example files, navigate your browser to http://192.168.33.10
 
 Hooray!
 
-**************
-
 ## Resources:
 * [Vagrant](http://vagrantup.com)
 * [TileStache](http://www.tilestache.org/)
