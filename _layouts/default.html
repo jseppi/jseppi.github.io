@@ -34,6 +34,18 @@
     </div>
 
 
+  <!-- TODO: Setup this navigation, maybe something in a dropdown in the main header area -->
+  <div class="article-navigation outer">
+    <section class="inner">
+      <h1>All Articles:</h1>
+      {% for item in site.categories.articles limit:40 offset:0 %}
+        <a class="article-link" href="{{site.baseurl}}{{item.url}}" title="{{item.title}}">
+          {{item.title}}
+        </a>
+      {% endfor %}
+    </section>
+  </div>
+
   <div id='footer_wrap' class="outer">
     <footer class="inner">
       <p>Slate theme by <a href="https://github.com/jsncostello">Jason Costello</a></p>
