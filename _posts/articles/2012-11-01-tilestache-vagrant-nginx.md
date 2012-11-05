@@ -134,7 +134,7 @@ See [http://blog.sidmitra.com/manage-multiple-projects-better-with-virtuale](htt
 
 Now we can install the python packages we need to run TileStache
 
-    pip install tilestache modetmaps gunicorn python-memcached
+    pip install tilestache modestmaps gunicorn python-memcached
 
 Note: python-memcached is only necessary if you want to use memcached as a cache provider for TileStache.
 
