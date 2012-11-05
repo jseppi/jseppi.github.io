@@ -110,7 +110,7 @@ Note 2: python-imaging and python-mapnik2 are installed using `apt-get` to dist-
 
 ### 2. Create a virtualenv for your TileStache
 
-We are going to use virtualenvwrapper to manage our python packages for our TileStache instance. virtualenvwrapper allows us to use global python packages along with our virtualenv packages to get around the python-imaging and python-mapnik2 problem.
+We are going to use virtualenvwrapper to manage our python packages for our TileStache instance. Among other sweet features, virtualenvwrapper allows us to use global python packages along with our virtualenv packages to get around the python-imaging and python-mapnik2 problem.
 
     sudo pip install virtualenvwrapper
     source /usr/local/bin/virtualenvwrapper.sh
