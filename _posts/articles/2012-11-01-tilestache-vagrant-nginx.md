@@ -117,7 +117,7 @@ We are going to use virtualenvwrapper to manage our python packages for our Tile
     mkdir TileStacheServer
     mkvirtualenv --no-site-packages TileStacheServer
 
-You'll now be operating withing a virtualenv, as indicated by the name in parentheses at the start of your terminal prompt, ex `(TileStacheServer) root@precise32:/home/vagrant#`
+You'll now be operating withing a virtualenv, as indicated by the name in parentheses at the start of your terminal prompt, ex `(TileStacheServer) vagrant@precise32:/home/vagrant#`
 
 Note: Exit the current virtualenv by typing `deactivate`.  Resume the virtualenv by typing `workon TileStacheServer`.
 
