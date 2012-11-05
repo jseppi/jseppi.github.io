@@ -6,7 +6,7 @@ layout: default
 <article>
   <header class="intro">
     <hgroup>
-      <h1>{{page.title}}</h1>
+      <h1><a href="{{site.baseurl}}{{page.url}}" title="{{page.title}}">{{page.title}}</a></h1>
       <h2>{{page.abstract}}</h2>
       <div class="meta">Posted by <a href="http://twitter.com/{{page.author_twitter}}">{{page.author}}</a> on {{ page.date | date: "%B %d, %Y" }}</div>
     </hgroup>
