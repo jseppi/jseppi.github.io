@@ -59,9 +59,14 @@ First we install the vagrant gem and download a base vagrant box (the VirtualBox
 
     sudo gem install vagrant
     vagrant box add precise32 http://files.vagrantup.com/precise32.box
-    
-The next command will create a "Vagrantfile" in your current working directory, so first `cd` to where you want your installation to go.
 
+Now create and `cd` to the directory you want to hold your Vagrant box.  I'll put it in a folder called VagrantStache in my home directory.
+
+    mkdir ~/VagrantStache
+    cd ~/VagrantStache
+    
+The next command will create a "Vagrantfile" in your current working directory
+    
     vagrant init precise32
 
 Open the newly created "Vagrantfile" in your preferred text editor and uncomment the line `config.vm.network :hostonly, "192.168.33.10"` (near or at line 23).  You may also specify an address of your choosing instead of the default.
@@ -78,7 +83,11 @@ Note: The first `vagrant up` might take a few minutes. Be patient!
 
 Other Notes:
 * If you need to change some settings in your "Vagrantfile", make sure to do `vagrant reload` 
-* The directory where your "Vagrantfile" is stored is a shared drive on your virtual machine!  From your virtual machine it can be accessed at `/vagrant`.
+* The directory where your "Vagrantfile" is stored is a shared drive on your virtual Vagrant machine!  From your virtual machine it can be accessed at `/vagrant`.
+
+If you are using my [example files](/files/ts_countries.zip), `mv` that archive into the Vagrantfile directory so you can access them on your virtual machine.
+
+    mv ~/Downloads/ts_countries.zip ~/VagrantStache/
 
 ## NGINX and TileStache on the Guest Vagrant Box
 
@@ -106,12 +115,18 @@ We are going to use virtualenvwrapper to manage our python packages for our Tile
     sudo pip install virtualenvwrapper
     source /usr/local/bin/virtualenvwrapper.sh
     mkdir TileStacheServer
-    cd TileStacheServer
-    mkvirtualenv --no-site-packages TileStacheServer/
+    mkvirtualenv --no-site-packages TileStacheServer
 
 You'll now be operating withing a virtualenv, as indicated by the name in parentheses at the start of your terminal prompt, ex `(TileStacheServer) root@precise32:/home/vagrant#`
 
 Note: Exit the current virtualenv by typing `deactivate`.  Resume the virtualenv by typing `workon TileStacheServer`.
+
+If you are using my [example files](/files/ts_countries.zip), move and unzip those files into the new directory.
+
+    mv /vagrant/ts_countries.zip TileStacheServer/
+    sudo apt-get install unzip
+    cd TileStacheServer/
+    unzip ts_countries.zip
 
 See [http://blog.sidmitra.com/manage-multiple-projects-better-with-virtuale](http://blog.sidmitra.com/manage-multiple-projects-better-with-virtuale) for a more in-depth overview in setting up and using virtualenvwrapper
 
@@ -127,39 +142,49 @@ And we also need to use virtualenvwrapper to toggle global site packages so we h
 
     toggleglobalsitepackages    
 
-### 4. Run Your TileStacheServer
+### 4. Configure and Start NGINX with TileStache
 
-gunicorn somethingsomething
+Almost there!  We just need to configure NGINX and proxy requests to TileStache.
 
-**************
+As seen at [http://samrat.me/blog/2012/05/flask-nginx-gunicornon-a-vagrant-box/](http://samrat.me/blog/2012/05/flask-nginx-gunicornon-a-vagrant-box/):
 
-## Example TileStache Config Contents
+    /etc/init.d/nginx start
+    rm /etc/nginx/sites-enabled/default
+    touch /etc/nginx/sites-available/TileStache
+    ln -s /etc/nginx/sites-available/TileStache  /etc/nginx/sites-enabled/TileStache
 
-tilestache.cfg
+Then open `/etc/nginx/sites-enabled/TileStache` with your preferred text editor and add
 
-    {
-        "cache": {
-            "name": "memcached"
-        },
-        "layers": {
-            "countries": {
-                "provider": {
-                    "name": "mapnik",
-                    "mapfile": "Countries.xml"
-                }
-            }
+    server {
+        location / {
+            proxy_pass http://127.0.0.1:9001;
         }
     }
 
+Restart nginx
+
+    /etc/init.d/nginx restart
+
+And run TileStache using gunicorn, making sure to specify your TileStache config file.  If you are using my example files and have unzipped them into `~/TileStacheServer/` it will look like this:
+
+    gunicorn -b 0.0.0.0:9001 "TileStache:WSGITileServer('~/TileStacheServer/tilestache.cfg')"
+
+### 5. Test it out from your Host Machine
+
+Back on your host machine, navigate your web browser to the address you specified in your Vagrantfile back in step 3 (http://192.168.33.10/). You should see a message confirming TileStache is running:
+
+    TileStache bellows hello.
+
+If you are using my example files, navigate your browser to http://192.168.33.10/countries/ and you should see an interactive map. The tiles themselves are accessible through URLs of the form http://192.168.33.10/countries/{z}/{x}/{y}.png (example: http://192.168.33.10/countries/0/0/0.png)
+
+Hooray!
 
 **************
 
 ## Resources:
 * [Vagrant](http://vagrantup.com)
-* [VirtualBox](http://virtualbox.org)
 * [TileStache](http://www.tilestache.org/)
 * [NGINX](http://nginx.org/en/)
 * [virtualenvwrapper](http://virtualenvwrapper.readthedocs.org/en/latest/command_ref.html)
 * [http://samrat.me/blog/2012/05/flask-nginx-gunicornon-a-vagrant-box/](http://samrat.me/blog/2012/05/flask-nginx-gunicornon-a-vagrant-box/)
 * [http://blog.sidmitra.com/manage-multiple-projects-better-with-virtuale](http://blog.sidmitra.com/manage-multiple-projects-better-with-virtuale)
-* 
