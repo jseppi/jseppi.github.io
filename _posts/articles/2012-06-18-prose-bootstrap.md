@@ -9,7 +9,7 @@ categories:
 published: false
 ---
 
-In order to get started with Prose Bootstrap, all you have to do is forking the [repository](http://github.com/prose/bootstrap) and make your own adjustments.
+In order to get started with Prose Bootstrap, all you have to do is fork the [repository](http://github.com/prose/bootstrap) and make your own adjustments.
 
 # Adjust Configuration
 
