@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<h1>Hi</h1>
+<h1>Hi There</h1>
 <p>This is a relatively informal place for me to keep development notes and guides, mainly so I don't forget how I did something.  However, since I've benefitted from reading such blogs of others, I figured I should give back with my own ramblings.</p>
 
 <p>If you see something wrong, or that could be done better, or that just rubs you the wrong way, please let me know!</p>
@@ -12,10 +12,10 @@ layout: default
   <li>james.seppi at gmail.com</li>
   <li><a href="http://github.com/jseppi">jseppi@github</a></li>
   <li><a href="http://twitter.com/hydrologee">@hydrologee</a></li>
-  <li><a href="http://www.coseppi.com">Coseppi Partnership</a><li>
+  <li><a href="http://www.coseppi.com">Coseppi Partnership</a></li>
 </ul>
 
-<h2>Recent Posts:</h2>
+<h2>Recent Posts</h2>
 {% for item in site.categories.articles limit:40 offset:0 %}  
     <p>{{ item.date | date: "%B %d, %Y" }} | <a href="{{item.url}}" title="{{item.title}}">{{item.title}}</a></p>
 {% endfor %}
