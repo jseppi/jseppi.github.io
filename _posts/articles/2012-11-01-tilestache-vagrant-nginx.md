@@ -39,7 +39,7 @@ For Fedora 17:
 As seen at [http://www.zealfortechnology.com/2012/06/install-oracle-virtualbox-on-fedora.html](http://www.zealfortechnology.com/2012/06/install-oracle-virtualbox-on-fedora.html).
     
     curl http://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo > virtualbox.repo
-    sudo mv virtualbox.repo /etc/yum/repos.d/
+    sudo mv virtualbox.repo /etc/yum.repos.d/
     sudo yum install dkms
     sudo yum install VirtualBox4.2
 
