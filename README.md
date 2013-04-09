@@ -1,4 +1,4 @@
-Prose Bootstrap
+jseppi.github.com/io
 =================
 
-A minimal template to get started with Jekyll and Prose.
+Source for my github pages site.
