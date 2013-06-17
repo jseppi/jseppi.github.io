@@ -83,7 +83,7 @@ Note: The first `vagrant up` might take a few minutes. Be patient!
 
 Other Notes:
 * If you need to change some settings in your "Vagrantfile", make sure to do `vagrant reload` 
-* The directory where your "Vagrantfile" is stored is a shared drive on your virtual Vagrant machine!  From your virtual machine it can be accessed at `/vagrant`.
+* The directory where your "Vagrantfile" is mounted as a shared drive on your virtual Vagrant machine!  From your virtual machine it can be accessed at `/vagrant`.
 
 If you are using my [example files](/files/ts_countries.zip), `mv` that archive into the Vagrantfile directory so you can access them on your virtual machine.
 
