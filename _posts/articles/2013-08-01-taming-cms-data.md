@@ -23,6 +23,11 @@ Here are some quick numbers from the dataset:
 - 3,337 health care providers
 - 163,065 records of inpatient service average charges and payments
 - 41,175 records of outpatient service average charges and payments
-- Highest average inpatient charge was $929,119 for DRG 207 - RESPIRATORY SYSTEM DIAGNOSIS W VENTILATOR SUPPORT 96+ HOURS
+- Highest average inpatient charge was $929,119 for DRG 207 - "Respiratory System Diagnosis with Ventilator Support for 96+ Hours" at Stanford Hospital in California.
+- Highest average outpatient charge was $32,105 for APC 74 - "Level IV Endoscopy Upper Airway" at Fort Walton Beach Medical Center in Florida
 
-You can check out my [load-cms-data project](https://github.com/jseppi/load-cms-data) on Github or just [download a zip](https://github.com/jseppi/load-cms-data/archive/master.zip) of the code and the resulting database.
+You can check out my [load-cms-data project](https://github.com/jseppi/load-cms-data) on Github or just [download a zip](https://github.com/jseppi/load-cms-data/archive/master.zip) of the code and the resulting database.  
+
+For a neat (I think) tool that I built with these data, check out my site www.HealthCostNegotiator.com. The goal of the site is to help uninsured or under-insured people negotiate their health care charges with their providers. Users can find what providers were paid by Medicare (typically much less than the amount originally charged) for the same procedure and hopefully use that information to start as a baseline for negotitations.
+
+
