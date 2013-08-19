@@ -3,32 +3,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset='UTF-8'/>
-  <title>Development Notes from James Seppi</title>
-  <link rel='shortcut icon' href='{{site.baseurl}}/images/favicon.ico' type='image/x-icon' />
-  <link rel='stylesheet' href='{{site.baseurl}}/fonts/open-sans.css'>
-  <!--<link rel='stylesheet' href='{{site.baseurl}}/app.css'>-->
+    <meta charset='UTF-8'/>
+    <title>Development Notes from James Seppi</title>
+    <link rel='shortcut icon' href='{{site.baseurl}}/images/favicon.ico' type='image/x-icon' />
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" type="text/css" media="screen" href="{{site.baseurl}}/stylesheets/stylesheet.css">
-
-
-  <script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-36067549-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
-  </script>
+    <link rel="stylesheet" type="text/css" media="screen" href="{{site.baseurl}}/stylesheets/stylesheet.css">
 </head>
 <body>
-  
-
     <div id="header_wrap" class="outer">
       <header class="inner">
       
@@ -41,19 +23,31 @@
       </header>
     </div>
 
-
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         {{content}}
       </section>
     </div>
 
-  <div id='footer_wrap' class="outer">
-    <footer class="inner">
-      <p>Content by James Seppi</p>
-      <p>Slate theme by <a href="https://github.com/jsncostello">Jason Costello</a></p>
-    </footer>
-  </div>
+    <div id='footer_wrap' class="outer">
+      <footer class="inner">
+        <p>Content by James Seppi | <a href="http://www.twitter.com/hydrologee" title="@hydrologee on Twitter">@hydrologee</a></p>
+        <p>Slate theme by <a href="https://github.com/jsncostello">Jason Costello</a></p>
+      </footer>
+    </div>
 
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-36067549-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
 </body>
 </html>
