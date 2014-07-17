@@ -1,40 +1,62 @@
----
----
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset='UTF-8'/>
-    <title>Development Notes from James Seppi</title>
-    <link rel='shortcut icon' href='{{site.baseurl}}/images/favicon.ico' type='image/x-icon' />
-    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="James Seppi's development blog">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="{{site.baseurl}}/stylesheets/stylesheet.css">
+  <title>James Seppi</title>
+
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
+  <link rel="stylesheet" href="/css/main.css">
+
 </head>
 <body>
-    <div id="header_wrap" class="outer">
-      <header class="inner">
-      
-        <h1 id="project_title">jseppi.github.io</h1>
-        <h2 id="project_tagline"><a href="{{site.baseurl}}/" class="title">Development Notes from James Seppi</a></h2>
-        <!--<section id="downloads">
-            <a class="zip_download_link" href="#">Download this project as a .zip file</a>
-            <a class="tar_download_link" href="#">Download this project as a tar.gz file</a>
-          </section>-->
-      </header>
-    </div>
 
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        {{content}}
-      </section>
-    </div>
+<div id="layout" class="pure-g">
+  <div class="sidebar pure-u-1 pure-u-md-1-4">
+    <div class="header">
+      <hgroup>
+        <h1 class="blog-title">
+            <a href="/{{site.baseurl}}" title="Home">
+                <span class="first-name">James</span><br/>
+                <span class="last-name">Seppi</span>
+            </a>
+        </h1>
+        <h2 class="blog-tagline">Developer &amp; Web Mapper in Austin, TX</h2>
+      </hgroup>
 
-    <div id='footer_wrap' class="outer">
-      <footer class="inner">
-        <p>Content by James Seppi | <a href="http://www.twitter.com/hydrologee" title="@hydrologee on Twitter">@hydrologee</a></p>
-        <p>Slate theme by <a href="https://github.com/jsncostello">Jason Costello</a></p>
-      </footer>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a class="pure-button" href="http://github.com/jseppi">GitHub</a>
+          </li>
+          <li class="nav-item">
+            <a class="pure-button" href="http://twitter.com/hydrologee">Twitter</a>
+          </li>
+        </ul>
+      </nav>
     </div>
+  </div>
+
+    <div class="content pure-u-1 pure-u-md-3-4">
+        <div>
+
+
+            <div class="posts">
+                {{content}}
+            </div>
+
+            <div class="footer">
+                <div class="pure-menu pure-menu-horizontal pure-menu-open">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
     <script type="text/javascript">
 
@@ -49,5 +71,6 @@
       })();
 
     </script>
+
 </body>
 </html>

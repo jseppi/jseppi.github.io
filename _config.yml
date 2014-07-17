@@ -1,6 +1,4 @@
-auto: true
-server: true
-permalink: none
+permalink: pretty
 baseurl: ""
 exclude:
 - .gitignore

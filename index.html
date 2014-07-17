@@ -3,12 +3,10 @@ layout: default
 published: true
 ---
 
-<p>This is a relatively informal place for me to keep development notes and guides, mainly so I don't forget how I did something. However, since I've benefitted from reading such blogs of others, I figured I should give back with my own ramblings.</p>
-
-<h2>Projects</h2>
+<h1 class="content-subhead">Projects</h1>
 <ul>
     <li>
-        <a href="http://healthcostnegotiator.com">Health Cost Negotiator</a> - A simple application to help uninsured and underinsured people negotiate their hospital service charges.
+        <a href="http://texasstatewaterplan.org">Interactive Texas State Water Plan</a> - Web application developed as part of the team at the Texas Water Development Board.
     </li>
     <li>
         <a href="http://labs.coseppi.com/cms/">Medicare Provider Charge Data Visualization</a> - An interactive visualization of the CMS Medicare Provider Charge Data.
@@ -16,17 +14,14 @@ published: true
     <li>
         <a href="https://github.com/jseppi/angular-dropdowns">angular-dropdowns</a> - Simple dropdown directives for AngularJS.
     </li>
-    <li>
-        <a href="https://github.com/jseppi/angular-dropdowns">angular-dnd</a> - HTML5 drag-and-drop directives for AngularJS.
-    </li>
 </ul>
 
-<h2>Recent Posts</h2>
+<h1 class="content-subhead">Recent Posts</h1>
 {% for item in site.categories.articles limit:40 offset:0 %}  
     <p>{{ item.date | date: "%B %d, %Y" }} | <a href="{{item.url}}" title="{{item.title}}">{{item.title}}</a></p>
 {% endfor %}
 
-<h2>Ways to Reach Me</h2>
+<h1 class="content-subhead">Ways to Reach Me</h1>
 <ul>
   <li>james.seppi at gmail.com</li>
   <li><a href="http://github.com/jseppi">jseppi@github</a></li>
