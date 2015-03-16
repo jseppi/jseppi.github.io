@@ -16,7 +16,7 @@ published: true
     </li>
 </ul>
 
-<h1 class="content-subhead">Recent Posts</h1>
+<h1 class="content-subhead">Posts</h1>
 {% for item in site.categories.articles limit:40 offset:0 %}  
     <p>{{ item.date | date: "%B %d, %Y" }} | <a href="{{item.url}}" title="{{item.title}}">{{item.title}}</a></p>
 {% endfor %}
