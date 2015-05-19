@@ -3,32 +3,40 @@ layout: default
 published: true
 ---
 
-<h1 class="content-subhead">Projects</h1>
-<ul>
-    <li>
-        <a href="http://texasstatewaterplan.org">Interactive Texas State Water Plan</a> - Web application developed as part of the team at the Texas Water Development Board.
-    </li>
-    <li>
-        <a href="http://labs.coseppi.com/cms/">Medicare Provider Charge Data Visualization</a> - An interactive visualization of the CMS Medicare Provider Charge Data.
-    </li>
-    <li>
-        <a href="https://github.com/jseppi/angular-dropdowns">angular-dropdowns</a> - Simple dropdown directives for AngularJS.
-    </li>
-</ul>
+<div class="content-section">
+  <h1 class="content-subhead">Projects</h1>
+  <ul>
+      <li>
+          <a href="http://texasstatewaterplan.org">Interactive Texas State Water Plan</a> - Web application developed as part of the team at the Texas Water Development Board.
+      </li>
+      <li>
+          <a href="http://labs.coseppi.com/cms/">Medicare Provider Charge Data Visualization</a> - An interactive visualization of the CMS Medicare Provider Charge Data.
+      </li>
+      <li>
+          <a href="https://github.com/jseppi/angular-dropdowns">angular-dropdowns</a> - Simple dropdown directives for AngularJS.
+      </li>
+  </ul>
+</div>
 
-<h1 class="content-subhead">Posts</h1>
-{% for item in site.categories.articles limit:40 offset:0 %}  
-    <p>{{ item.date | date: "%B %d, %Y" }} | <a href="{{item.url}}" title="{{item.title}}">{{item.title}}</a></p>
-{% endfor %}
+<div class="content-section">
+  <h1 class="content-subhead">Posts</h1>
+  {% for item in site.categories.articles limit:40 offset:0 %}  
+      <p>{{ item.date | date: "%B %d, %Y" }} | <a href="{{item.url}}" title="{{item.title}}">{{item.title}}</a></p>
+  {% endfor %}
+</div>
 
-<h1 class="content-subhead">Ways to Reach Me</h1>
-<ul>
-  <li>james.seppi at gmail.com</li>
-  <li><a href="http://github.com/jseppi">jseppi@github</a></li>
-  <li><a href="http://twitter.com/hydrologee">@hydrologee</a></li>
-  <li><a href="http://www.linkedin.com/pub/james-seppi/40/84a/5b8">LinkedIn</a></li>
-  <li><a href="http://www.coseppi.com">Coseppi Partnership</a> - Consulting by James Seppi and Taylor Cook</li>
-  <li><a href="http://kitchen.coseppi.com">Coseppi Kitchen</a> - Vegetarian Cooking Blog by James Seppi and Taylor Cook</li>
-</ul>
+<div class="content-section">
+  <h1 class="content-subhead">Contact</h1>
+  <ul>
+    <li>james.seppi at gmail.com</li>
+    <li><a href="http://github.com/jseppi">github.com/jseppi</a></li>
+    <li><a href="http://twitter.com/hydrologee">@hydrologee</a></li>
+    <li><a href="http://www.linkedin.com/pub/james-seppi/40/84a/5b8">LinkedIn</a></li>
+    <li><a href="http://www.coseppi.com">Coseppi Partnership</a> - Consulting by James Seppi and Taylor Cook</li>
+    <li><a href="http://kitchen.coseppi.com">Coseppi Kitchen</a> - Vegetarian Cooking Blog by James Seppi and Taylor Cook</li>
+  </ul>
+</div>
 
-<p>If you see something incorrect, or that could be done better, or that just rubs you the wrong way, please let me know!</p>
+<div class="content-section">
+  <p>If you see something incorrect, or that could be done better, or that just rubs you the wrong way, please let me know!</p>
+</div>
