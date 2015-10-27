@@ -8,28 +8,54 @@ published: true
   <div class="project-list">
     <div class="pure-g">
       <div class="pure-u-1 pure-u-lg-1-2">
-        <h3>2012 Interactive Texas State Water Plan</h3>
-        <a href="http://texasstatewaterplan.org" target="_blank" title="2012 Interactive Texas State Water Plan">
-          <img class="pure-img" src="/img/projects/iswp_wide.png" />
-        </a>
+        <div class="project-item">
+          <h3>2017 Interactive Texas State Water Plan (In Progress)</h3>
+          <div class="img-container">
+            <a href="https://github.com/tnris/iswp2017" target="_blank" title="2017 Interactive Texas State Water Plan">
+              <img class="pure-img project-img" src="/img/projects/iswp2017.png" />
+            </a>
+          </div>
+        </div>
       </div>
       <div class="pure-u-1 pure-u-lg-1-2">
-        <h3>GEMSS2</h3>
-        <a href="http://texasstatewaterplan.org" target="_blank" title="2012 Interactive Texas State Water Plan">
-          <img class="pure-img" src="/img/projects/iswp_wide.png" />
-        </a>
+        <div class="project-item">
+          <h3>2012 Interactive Texas State Water Plan</h3>
+          <div class="img-container">
+            <a href="http://texasstatewaterplan.org" target="_blank" title="2012 Interactive Texas State Water Plan">
+              <img class="pure-img project-img" src="/img/projects/iswp2012.png" />
+            </a>
+          </div>
+        </div>
       </div>
       <div class="pure-u-1 pure-u-lg-1-2">
-        <h3>CMS Medicaid Provider Charge Data Viz</h3>
-        <a href="http://texasstatewaterplan.org" target="_blank" title="2012 Interactive Texas State Water Plan">
-          <img class="pure-img" src="/img/projects/iswp_wide.png" />
-        </a>
+        <div class="project-item">
+          <h3>GEMSS2</h3>
+          <div class="img-container">
+            <a href="https://gemss2.tnris.org" target="_blank" title="GEMSS2">
+              <img class="pure-img project-img" src="/img/projects/gemss2.png" />
+            </a>
+          </div>
+        </div>
       </div>
       <div class="pure-u-1 pure-u-lg-1-2">
-        <h3>MaptimeATX</h3>
-        <a href="http://texasstatewaterplan.org" target="_blank" title="2012 Interactive Texas State Water Plan">
-          <img class="pure-img" src="/img/projects/iswp_wide.png" />
-        </a>
+        <div class="project-item">
+          <h3>MaptimeATX</h3>
+          <div class="img-container">
+            <a href="http://maptimeatx.github.io" target="_blank" title="MaptimeATX">
+              <img class="pure-img project-img" src="/img/projects/maptime.png" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="pure-u-1 pure-u-lg-1-2">
+        <div class="project-item">
+          <h3>CMS Medicaid Provider Charge Data Viz</h3>
+          <div class="img-container">
+            <a href="http://jseppi.github.io/cms-viz" target="_blank" title="Medicaid Provider Charge Data Viz">
+              <img class="pure-img project-img" src="/img/projects/cmsviz.png" />
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -37,7 +63,7 @@ published: true
 
 <div class="content-section">
   <h1 class="content-subhead">Posts</h1>
-  {% for item in site.categories.articles limit:40 offset:0 %}  
+  {% for item in site.categories.articles limit:40 offset:0 %}
       <p>{{ item.date | date: "%B %d, %Y" }} | <a href="{{item.url}}" title="{{item.title}}">{{item.title}}</a></p>
   {% endfor %}
 </div>
