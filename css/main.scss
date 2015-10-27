@@ -232,8 +232,19 @@ pre  {
     }
 }
 
-.project-list {
+.at-a-glance {
+    img {
+        margin-right: 1rem;
+        width: 100px;
+        float: left;
+    }
 
+    p {
+        margin-top: 0;
+    }
+}
+
+.project-list {
     .img-container {
         max-height: 250px;
         border: 1px solid #ccc;
