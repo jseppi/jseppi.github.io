@@ -249,6 +249,10 @@ pre  {
         max-height: 250px;
         border: 1px solid #ccc;
         overflow: hidden;
+
+        @media screen and (min-width: 64em) {
+            height: 250px;
+        }
     }
 
     .project-img {
