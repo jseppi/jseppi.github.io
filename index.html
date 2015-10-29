@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: index
 published: true
 ---
 
 <div class="content-section">
-  <h1 class="content-subhead">Hi, I'm James!</h1>
+  <h2 class="content-subhead">Hi, I'm James!</h2>
   <div class="at-a-glance">
     <div class="pure-g">
       <div class="pure-u-1">
@@ -19,7 +19,7 @@ published: true
 </div>
 
 <div class="content-section">
-  <h1 class="content-subhead">Projects &amp; Activities</h1>
+  <h2 class="content-subhead">Projects &amp; Activities</h2>
   <div class="project-list">
     <div class="pure-g">
       <div class="pure-u-1 pure-u-lg-1-2">
@@ -77,14 +77,20 @@ published: true
 </div>
 
 <div class="content-section">
-  <h1 class="content-subhead">Posts</h1>
+  <h2 class="content-subhead">Popular GitHub Repos</h2>
+  <div id="repo-list"></div>
+</div>
+
+
+<div class="content-section">
+  <h2 class="content-subhead">Posts</h2>
   {% for item in site.categories.articles limit:40 offset:0 %}
       <p>{{ item.date | date: "%B %d, %Y" }} | <a href="{{item.url}}" title="{{item.title}}">{{item.title}}</a></p>
   {% endfor %}
 </div>
 
 <div class="content-section">
-  <h1 class="content-subhead">Contact</h1>
+  <h2 class="content-subhead">Contact</h2>
   <ul>
     <li>james.seppi at gmail.com</li>
     <li><a href="http://github.com/jseppi">github.com/jseppi</a></li>
