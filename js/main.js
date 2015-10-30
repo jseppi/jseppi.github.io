@@ -1,6 +1,6 @@
 /* global m */
 (function () {
-  'use strict';
+  "use strict";
 
   var Repo = {
     list: function() {
@@ -29,7 +29,7 @@
       return m("ul", [
         ctrl.repos().map(function (repo) {
           return m("li", m("a", {href: repo.html_url}, repo.name), " - " + repo.description);
-        }),
+        })
       ]);
     }
   };
