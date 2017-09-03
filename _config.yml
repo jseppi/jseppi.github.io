@@ -4,5 +4,3 @@ markdown: kramdown
 exclude:
   - .gitignore
   - README.md
-plugins:
-  - jekyll-octicons
