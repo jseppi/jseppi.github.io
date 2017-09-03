@@ -12,6 +12,7 @@ published: true
         <p>I am a software developer in Austin, Texas, currently working at <a href="https://18f.gsa.gov" title="18F">18F</a> to help transform the way the federal goverment does digital services. My main areas of practice are web-based geospatial development and full stack JavaScript.</p>
         <p>Nearly all of my code is <a href="https://github.com/jseppi">open source</a>, and I enjoy contributing to other open source projects.</p>
         <p>In my free time, I'm a beginner fiddle player, an aspirational rock climber, an <a href="http://picasaweb.google.com/103599068819414368719">enthusiastic traveler</a>, and a decent <a href="http://kitchen.coseppi.com">home cook</a> and beer brewer.</p>
+        
         <p>Other interesting tidbits:</p>
         <ul>
           <li>My wife and I spent six months living at 10,000 feet in Huaraz, Peru, while working on an Engineers Without Borders project to help local communities adapt to climate change.</li>
@@ -28,56 +29,31 @@ published: true
   <h2 class="content-subhead">Projects &amp; Activities</h2>
   <div class="project-list">
     <div class="pure-g">
-      <div class="pure-u-1 pure-u-lg-1-2">
-        <div class="project-item">
-          <h3>2017 Interactive Texas State Water Plan</h3>
-          <div class="img-container">
-            <a href="https://2017.texasstatewaterplan.org" target="_blank" title="2017 Interactive Texas State Water Plan">
-              <img class="pure-img project-img" src="/img/projects/iswp2017.png" />
-            </a>
+
+      {% for p in site.data.projects %}
+        
+        <div class="pure-u-1 pure-u-lg-1-2">
+          <div class="project-item">
+            <h3>{{ p.name }} {% if p.organization %}| {{ p.organization }}{% endif %}</h3>
+            
+            <div class="img-container">
+              <a href="{{ p.link }}" target="_blank" title="{{ p.name }}"><img class="pure-img project-img" src="/img/projects/{{ p.image }}" /></a>
+            </div>
+
+            <p>
+              {% if p.github_repo %}
+                <a class="repo-link" href="https://github.com/{{ p.github_repo }}">
+                  {% octicon octoface height:15 aria-label:"GitHub repo for {{p.name}}" %}
+                </a>
+              {% endif %}
+              {{ p.about }}
+            </p>
+
           </div>
         </div>
-      </div>
-      <div class="pure-u-1 pure-u-lg-1-2">
-        <div class="project-item">
-          <h3>2012 Interactive Texas State Water Plan</h3>
-          <div class="img-container">
-            <a href="http://2012.texasstatewaterplan.org" target="_blank" title="2012 Interactive Texas State Water Plan">
-              <img class="pure-img project-img" src="/img/projects/iswp2012.png" />
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="pure-u-1 pure-u-lg-1-2">
-        <div class="project-item">
-          <h3>GEMSS2</h3>
-          <div class="img-container">
-            <a href="https://gemss2.tnris.org" target="_blank" title="GEMSS2">
-              <img class="pure-img project-img" src="/img/projects/gemss2.png" />
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="pure-u-1 pure-u-lg-1-2">
-        <div class="project-item">
-          <h3>MaptimeATX</h3>
-          <div class="img-container">
-            <a href="http://maptimeatx.github.io" target="_blank" title="MaptimeATX">
-              <img class="pure-img project-img" src="/img/projects/maptime.png" />
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="pure-u-1 pure-u-lg-1-2">
-        <div class="project-item">
-          <h3>CMS Medicaid Provider Charge Data Viz</h3>
-          <div class="img-container">
-            <a href="http://jseppi.github.io/cms-viz" target="_blank" title="Medicaid Provider Charge Data Viz">
-              <img class="pure-img project-img" src="/img/projects/cmsviz.png" />
-            </a>
-          </div>
-        </div>
-      </div>
+
+      {% endfor %}
+
     </div>
   </div>
 </div>

@@ -2,5 +2,7 @@ permalink: pretty
 baseurl: ""
 markdown: kramdown
 exclude:
-- .gitignore
-- README.md
+  - .gitignore
+  - README.md
+plugins:
+  - jekyll-octicons

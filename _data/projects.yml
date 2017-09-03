@@ -1,0 +1,66 @@
+---
+- name: Federalist
+  organization: 18F
+  github_repo: 18f/federalist
+  image: federalist.png
+  link: https://federalist.18f.gov
+  about: |
+    <a href="https://federalist.18f.gov">Federalist</a> is a static site platform for compliantly hosting federal web sites.
+    It greatly reduces the arduous compliance burden of federal offices that want to launch web sites, which saves
+    a large amount of staff time and resources for those offices.
+    <br/>
+    I am currently the lead developer on this project, building upon the great work of previous 18F staff.
+- name: CALC
+  organization: 18F
+  github_repo: 18f/calc
+  image: calc.png
+  link: https://calc.gsa.gov
+  about: |
+    <a href="https://calc.gsa.gov">CALC</a> is a web-based tool to help for researching awarded labor rates of federal contracts, with the goal of helping
+    contracting officers better negotiate new rates. I was part of a team that added new data ingestion features to CALC.
+    <br/>
+    In addition to coding, I also participated in user research sessions and worked through the compliance process necessary
+    to keep CALC online.
+- name: 2017 Interactive State Water Plan
+  organization: TNRIS
+  github_repo: TNRIS/iswp2017
+  image: iswp2017.png
+  link: https://2017.texasstatewaterplan.org
+  about: |
+    The <a href="https://2017.texasstatewaterplan.org">2017 Interactive State Water Plan (ISWP 2017)</a> is a web application for the public and planners to explore the data of the 2017 Texas State Water Plan.
+    It was the first time the official State Water Plan of Texas had an online tool as part of its statutorily-mandated content.
+    <br/>
+    I was the primary developer and designer of the ISWP 2017 when I was at TNRIS, and staff who came after me have continued to improve its functionality.
+- name: GEMSS2
+  organization: TNRIS
+  image: gemss2.png
+  link: https://gemss2.tnris.org
+  about: |
+    The <a href="https://gemss2.tnris.org">Geospatial Emergency Management Support System 2.0 (GEMSS2)</a> is a web application for use by the public and state agencies to view a variety of geospatial data layers in a single web map.
+    <a href="https://twitter.com/TNRIS/status/710194507774607362">GEMSS2 was used at the Texas State Operations Center</a> during the response to severe floods in March 2016.
+    <br/>
+    I was the primary developer of GEMSS2.
+- name: 2012 Interactive State Water Plan
+  organization: TNRIS
+  github_repo: TNRIS/InteractiveWaterPlan
+  image: iswp2012.png
+  link: http://2012.texasstatewaterplan.org
+  about: |
+    Like the ISWP 2017, the <a href="http://2012.texasstatewaterplan.org">2012 Interactive State Water Plan</a> is a web application for exploring data of the 2012 Texas State Water plan.
+    It was launched a few years after the paper-based water plan, and was the first time Texas State Water Plan data was put online in an
+    interactive fashion.
+    <br/>
+    I was the primary developer and designer of the ISWP 2012 and worked closely with water planning staff and data analysts.
+- name: MaptimeATX
+  image: maptime.png
+  link: https://www.meetup.com/MaptimeATX/
+  about: |
+    <a href="http://maptime.io/">Maptime</a> is a beginner-friendly gathering to teach each other about mapping and cartographic concepts, often as they relate to maps on the internet.
+    As a founder and co-organizer of <a href="https://www.meetup.com/MaptimeATX/">MaptimeATX</a>, 
+    the Austin chapter of Maptime, I've led several workshops and given talks on topics like Leaflet, TurfJS, and Carto(DB).
+# - name: CMS Medicaid Provider Charge Data Viz
+#   image: cmsviz.png
+#   link: https://jseppi.github.io/cms-viz
+#   github_repo: jseppi/cms-viz
+#   about: |
+    
