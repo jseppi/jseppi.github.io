@@ -30,7 +30,7 @@
     The <a href="https://2017.texasstatewaterplan.org">2017 Interactive State Water Plan (ISWP 2017)</a> is a web application for the public and planners to explore the data of the 2017 Texas State Water Plan.
     It was the first time the official State Water Plan of Texas had an online tool as part of its statutorily-mandated content.
     <br/>
-    I was the primary developer and designer of the ISWP 2017 when I was at TNRIS, and staff who came after me have continued to improve its functionality.
+    I was the primary developer of the ISWP 2017 when I was at TNRIS, and staff who came after me have continued to improve its functionality.
 - name: GEMSS2
   organization: TNRIS
   image: gemss2.png

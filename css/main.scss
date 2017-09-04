@@ -17,12 +17,10 @@ body {
 
 ::selection {
     background: $color-light-pink;
-    /* WebKit/Blink Browsers */
 }
 
 ::-moz-selection {
     background: $color-light-pink;
-    /* Gecko Browsers */
 }
 
 html,
