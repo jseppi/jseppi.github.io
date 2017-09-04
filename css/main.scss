@@ -2,16 +2,17 @@
 ---
 
 @import "fonts/ostrich-sans.css";
-@import url(https://fonts.googleapis.com/css?family=Noto+Serif|Noto+Sans);
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans);
 
 $color-pink: #FB6964;
 $color-light-pink: #FFB7B7;
 $color-blue: #1352A2;
 $color-dark-gray: #3C3C3C;
+$font-family-sans: 'Noto Sans', sans-serif;
 
 body {
     color: $color-dark-gray;
-    font-family: 'Noto Serif', serif;
+    font-family: $font-family-sans;
 }
 
 ::selection {
@@ -30,7 +31,7 @@ input,
 select,
 textarea,
 .pure-g [class *="pure-u"] {
-    font-family: 'Noto Serif', serif;
+    font-family: $font-family-sans;
 }
 
 * {
@@ -308,14 +309,12 @@ pre {
 .project-item {
     margin-bottom: 1rem;
     padding-right: 0.5rem;
-    >h3 {
-        margin-bottom: 4px;
-        margin-top: 4px;
+    > h3 {
         color: #3d3d3d;
-        font-family: 'Noto Sans', sans-serif;
-        font-size: 1rem;
+        font-family: $font-family-sans;
+        font-size: 1.1rem;
     }
-    >a {
+    > a {
         display: block;
     }
 }
