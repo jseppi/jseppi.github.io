@@ -7,9 +7,9 @@
   about: |
     <a href="https://federalist.18f.gov">Federalist</a> is a static site platform for compliantly hosting federal web sites.
     It greatly reduces the arduous compliance burden of federal offices that want to launch web sites, which saves
-    a large amount of staff time and resources for those offices.
+    a large amount of staff time and resources for those offices. Federalist hosts nearly 100 sites and completes over 1,000 builds per week.
     <br/>
-    I am currently the lead developer on this project, building upon the great work of previous 18F staff.
+    I am currently the engineering lead on this project, building upon the great work of previous 18F developers.
 - name: CALC
   organization: 18F
   github_repo: 18f/calc
@@ -19,8 +19,8 @@
     <a href="https://calc.gsa.gov">CALC</a> is a web-based tool to help for researching awarded labor rates of federal contracts, with the goal of helping
     contracting officers better negotiate new rates. I was part of a team that added new data ingestion features to CALC.
     <br/>
-    In addition to coding, I also participated in user research sessions and worked through the compliance process necessary
-    to keep CALC online.
+    In addition to coding, I also participated in user research sessions and worked through the federal compliance process necessary
+    to get and keep CALC online.
 - name: 2017 Interactive State Water Plan
   organization: TNRIS
   github_repo: TNRIS/iswp2017
