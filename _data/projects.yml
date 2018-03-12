@@ -7,7 +7,7 @@
   about: |
     <a href="https://federalist.18f.gov">Federalist</a> is a static site platform for compliantly hosting federal web sites.
     It greatly reduces the arduous compliance burden of federal offices that want to launch web sites, which saves
-    a large amount of staff time and resources for those offices. Federalist hosts nearly 100 sites and completes over 1,000 builds per week.
+    a large amount of staff time and resources for those offices. Federalist hosts overr 100 sites and completes over 1,000 builds per week.
     <br/>
     I am currently the engineering lead on this project, building upon the great work of previous 18F developers.
 - name: CALC
