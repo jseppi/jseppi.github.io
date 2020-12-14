@@ -76,6 +76,8 @@
         })
       );
 
+      map.addControl(new mapboxgl.NavigationControl());
+
       map.on("style.load", function () {
         map.addSource("mapbox-dem", {
           type: "raster-dem",
