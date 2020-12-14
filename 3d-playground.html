@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mapbox GL JS 3D Playground</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
+      type="text/css"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body,
+      #map {
+        height: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="map"></div>
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+
+    <script>
+      mapboxgl.accessToken =
+        "pk.eyJ1IjoianNlcHBpbWJ4IiwiYSI6ImNraW9wdWNxdTAyOWQzNG1zMXloOXRhNWoifQ.8rYHD7PVVfW8qme2J-FVVg";
+
+      const map = (window.map = new mapboxgl.Map({
+        container: "map",
+        zoom: 11.25,
+        center: [-106.4908, 35.1035],
+        pitch: 54,
+        bearing: 0,
+        style: "mapbox://styles/mapbox/satellite-v9",
+        hash: true,
+      }));
+
+      map.addControl(
+        new MapboxGeocoder({
+          accessToken: mapboxgl.accessToken,
+          mapboxgl: mapboxgl,
+        })
+      );
+
+      map.on("style.load", function () {
+        map.addSource("mapbox-dem", {
+          type: "raster-dem",
+          url: "mapbox://mapbox.terrain-rgb",
+          tileSize: 512,
+          maxzoom: 14,
+        });
+        map.setTerrain({ source: "mapbox-dem", exaggeration: 2 });
+
+        map.addLayer({
+          id: "sky",
+          type: "sky",
+          paint: {
+            "sky-type": "atmosphere",
+            "sky-opacity": [
+              "interpolate",
+              ["exponential", 0.1],
+              ["zoom"],
+              5,
+              0,
+              22,
+              1,
+            ],
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
