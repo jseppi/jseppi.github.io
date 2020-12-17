@@ -30,6 +30,10 @@
       .dg.a {
         float: left !important;
       }
+
+      .property-name {
+        width: 20% !important;
+      }
     </style>
   </head>
 
@@ -44,19 +48,24 @@
     <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
 
     <script>
-      const demo = { style: "satellite-v9" };
-      window.onload = function () {
-        const gui = new dat.GUI();
+      const STYLES = [
+        "mapbox/satellite-v9",
+        "mapbox/satellite-streets-v11",
+        "mapbox/outdoors-v11",
+        "jseppimbx/ckit0misa1gxw19qkrd4flfda",
+      ];
+      const startStyle = STYLES[0];
 
-        const style = gui.add(demo, "style", [
-          "satellite-v9",
-          "satellite-streets-v11",
-          "outdoors-v11",
-        ]);
+      const demo = { style: startStyle };
+
+      window.onload = function () {
+        const gui = new dat.GUI({ width: 320 });
+        const style = gui.add(demo, "style", STYLES);
         style.onFinishChange((value) => {
-          map.setStyle("mapbox://styles/mapbox/" + value);
+          map.setStyle(`mapbox://styles/${value}`);
         });
       };
+
       mapboxgl.accessToken =
         "pk.eyJ1IjoianNlcHBpbWJ4IiwiYSI6ImNraW9wdWNxdTAyOWQzNG1zMXloOXRhNWoifQ.8rYHD7PVVfW8qme2J-FVVg";
 
@@ -66,7 +75,7 @@
         center: [-106.4908, 35.1035],
         pitch: 54,
         bearing: 0,
-        style: "mapbox://styles/mapbox/" + demo.style,
+        style: `mapbox://styles/${demo.style}`,
         hash: true,
       }));
 
