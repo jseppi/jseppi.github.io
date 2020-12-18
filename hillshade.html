@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mapbox GL JS 3D Hillshade Playground</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
+      type="text/css"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body,
+      #map {
+        height: 100%;
+      }
+      .dg.a {
+        float: left !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="map"></div>
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"
+    ></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+
+    <script>
+      function resetTerrain(exaggeration = 2) {
+        map.setTerrain({ source: "mapbox-dem", exaggeration });
+      }
+
+      function getStyle({
+        background,
+        hillshadeAccent,
+        hillshadeDirection,
+        hillshadeShadow,
+        water,
+      }) {
+        return {
+          version: 8,
+          sources: {
+            "mapbox://mapbox.terrain-rgb": {
+              url: "mapbox://mapbox.terrain-rgb",
+              type: "raster-dem",
+              tileSize: 256,
+            },
+            composite: {
+              url: "mapbox://mapbox.mapbox-streets-v8",
+              type: "vector",
+            },
+            "mapbox-dem": {
+              type: "raster-dem",
+              url: "mapbox://mapbox.terrain-rgb",
+              tileSize: 512,
+              maxzoom: 14,
+            },
+          },
+          layers: [
+            {
+              id: "background",
+              type: "background",
+              paint: { "background-color": background },
+            },
+            {
+              type: "hillshade",
+              paint: {
+                "hillshade-exaggeration": 0.9,
+                "hillshade-shadow-color": hillshadeShadow,
+                "hillshade-illumination-direction": hillshadeDirection,
+                "hillshade-accent-color": hillshadeAccent,
+              },
+              layout: {},
+              id: "mapbox-terrain-rgb",
+              source: "mapbox://mapbox.terrain-rgb",
+            },
+            {
+              layout: {},
+              type: "fill",
+              source: "composite",
+              id: "water",
+              paint: {
+                "fill-color": water,
+                "fill-opacity": 0.5,
+              },
+              "source-layer": "water",
+            },
+          ],
+        };
+      }
+
+      const controls = {
+        background: "#ffffff",
+        hillshadeAccent: "#0CA1A6",
+        hillshadeDirection: 315,
+        hillshadeShadow: "#1F1F1F",
+        water: "#0CA1A6",
+        exaggeration: 2,
+      };
+
+      window.onload = function () {
+        const gui = new dat.GUI({ width: 300 });
+        const backgroundColorControl = gui.addColor(controls, "background");
+        const hillshadeAccentColorControl = gui.addColor(
+          controls,
+          "hillshadeAccent"
+        );
+        const hillshadeShadowControl = gui.addColor(
+          controls,
+          "hillshadeShadow"
+        );
+        const hillshadeDirectionControl = gui.add(
+          controls,
+          "hillshadeDirection",
+          0,
+          359,
+          1
+        );
+        const waterColorControl = gui.addColor(controls, "water");
+        const exaggerationControl = gui.add(
+          controls,
+          "exaggeration",
+          0,
+          10,
+          0.1
+        );
+
+        function updateStyle() {
+          map.setStyle(
+            getStyle({
+              background: controls.background,
+              hillshadeAccent: controls.hillshadeAccent,
+              hillshadeDirection: controls.hillshadeDirection,
+              hillshadeShadow: controls.hillshadeShadow,
+              water: controls.water,
+            })
+          );
+          resetTerrain();
+        }
+
+        backgroundColorControl.onFinishChange(updateStyle);
+        hillshadeAccentColorControl.onFinishChange(updateStyle);
+        hillshadeDirectionControl.onFinishChange(updateStyle);
+        hillshadeShadowControl.onFinishChange(updateStyle);
+        waterColorControl.onFinishChange(updateStyle);
+        exaggerationControl.onFinishChange(resetTerrain);
+      };
+
+      mapboxgl.accessToken =
+        "pk.eyJ1IjoianNlcHBpbWJ4IiwiYSI6ImNraW9wdWNxdTAyOWQzNG1zMXloOXRhNWoifQ.8rYHD7PVVfW8qme2J-FVVg";
+
+      const map = (window.map = new mapboxgl.Map({
+        container: "map",
+        zoom: 11.25,
+        center: [-106.4908, 35.1035],
+        pitch: 54,
+        bearing: 0,
+        hash: true,
+        style: getStyle(controls),
+      }));
+
+      map.addControl(
+        new MapboxGeocoder({
+          accessToken: mapboxgl.accessToken,
+          mapboxgl: mapboxgl,
+          collapsed: true,
+        })
+      );
+
+      map.addControl(new mapboxgl.NavigationControl());
+
+      map.on("style.load", function () {
+        resetTerrain();
+
+        map.addLayer({
+          id: "sky",
+          type: "sky",
+          paint: {
+            "sky-type": "atmosphere",
+            "sky-opacity": [
+              "interpolate",
+              ["exponential", 0.1],
+              ["zoom"],
+              5,
+              0,
+              22,
+              1,
+            ],
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
