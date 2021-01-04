@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mapbox GL JS 3D Custom DEM</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
+      type="text/css"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body,
+      #map {
+        height: 100%;
+      }
+      .dg.a {
+        float: left !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="map"></div>
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"
+    ></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+
+    <script>
+      mapboxgl.accessToken =
+        "pk.eyJ1IjoianNlcHBpbWJ4IiwiYSI6ImNraW9wdWNxdTAyOWQzNG1zMXloOXRhNWoifQ.8rYHD7PVVfW8qme2J-FVVg";
+
+      const TILESET = "jseppimbx.9y6ifgdq"; // base-val -10000
+
+      const map = (window.map = new mapboxgl.Map({
+        container: "map",
+        zoom: 15,
+        center: [-101.62605, 34.92921],
+        pitch: 0,
+        bearing: 0,
+        hash: true,
+        transformRequest: (r, t) => {
+          if (t === "Tile" && r.includes(TILESET)) {
+            return { url: r.replace("webp", "pngraw") };
+          }
+        },
+        style: {
+          version: 8,
+          sources: {
+            rasterdem: {
+              type: "raster-dem",
+              url: `mapbox://${TILESET}`,
+            },
+            raster: {
+              type: "raster",
+              url: `mapbox://${TILESET}`,
+              tileSize: 512,
+            },
+          },
+          layers: [
+            {
+              id: "background",
+              type: "background",
+              paint: { "background-color": "white" },
+            },
+            {
+              id: "hillshade",
+              source: "rasterdem",
+              type: "hillshade",
+              paint: {
+                "hillshade-exaggeration": 0.5,
+                "hillshade-shadow-color": "#444444",
+                "hillshade-illumination-direction": 315,
+                "hillshade-accent-color": "black",
+              },
+            },
+            // {
+            //   id: "raster",
+            //   source: "raster",
+            //   type: "raster",
+            // },
+          ],
+        },
+      }));
+
+      map.addControl(
+        new MapboxGeocoder({
+          accessToken: mapboxgl.accessToken,
+          mapboxgl: mapboxgl,
+          collapsed: true,
+        })
+      );
+
+      map.addControl(new mapboxgl.NavigationControl());
+
+      map.on("style.load", () => {
+        map.addLayer({
+          id: "sky",
+          type: "sky",
+          paint: {
+            "sky-type": "atmosphere",
+            "sky-opacity": [
+              "interpolate",
+              ["exponential", 0.1],
+              ["zoom"],
+              5,
+              0,
+              22,
+              1,
+            ],
+          },
+        });
+
+        const DEM_SOURCE_ID = "tanaka-dem";
+
+        map.addSource(DEM_SOURCE_ID, {
+          type: "raster-dem",
+          url: `mapbox://${TILESET}`,
+          // url: `mapbox://mapbox.terrain-rgb`,
+          tileSize: 512,
+        });
+
+        // add the DEM source as a terrain layer with exaggerated height
+        map.setTerrain({ source: DEM_SOURCE_ID, exaggeration: 2 });
+        // map.setTerrain({ source: DEM_SOURCE_ID, exaggeration: 0.1 });
+      });
+    </script>
+  </body>
+</html>
