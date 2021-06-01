@@ -8,7 +8,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no"
     />
     <link
-      href="https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css"
+      href="https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.css"
       rel="stylesheet"
     />
     <link
@@ -39,7 +39,7 @@
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"
     ></script>
-    <script src="https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.js"></script>
     <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
 
     <script>
@@ -53,8 +53,12 @@
         hillshadeDirection,
         hillshadeShadow,
         water,
+        fogEnabled,
+        fogColor,
+        fogRangeStart,
+        fogRangeEnd,
       }) {
-        return {
+        const style = {
           version: 8,
           sources: {
             "mapbox://mapbox.terrain-rgb": {
@@ -104,6 +108,16 @@
             },
           ],
         };
+
+        if (fogEnabled) {
+          style.fog = {
+            color: fogColor,
+            "horizon-blend": 0.5,
+            range: [fogRangeStart, fogRangeEnd],
+          };
+        }
+
+        return style;
       }
 
       const controls = {
@@ -113,6 +127,10 @@
         hillshadeShadow: "#1F1F1F",
         water: "#0CA1A6",
         exaggeration: 2,
+        fogEnabled: true,
+        fogColor: "#ffffff",
+        fogRangeStart: 0.1,
+        fogRangeEnd: 5,
       };
 
       window.onload = function () {
@@ -141,6 +159,22 @@
           10,
           0.1
         );
+        const fogEnabledControl = gui.add(controls, "fogEnabled");
+        const fogColorControl = gui.addColor(controls, "fogColor");
+        const fogRangeStartControl = gui.add(
+          controls,
+          "fogRangeStart",
+          -20,
+          20,
+          0.1
+        );
+        const fogRangeEndControl = gui.add(
+          controls,
+          "fogRangeEnd",
+          -20,
+          20,
+          0.1
+        );
 
         function updateStyle() {
           map.setStyle(
@@ -150,6 +184,10 @@
               hillshadeDirection: controls.hillshadeDirection,
               hillshadeShadow: controls.hillshadeShadow,
               water: controls.water,
+              fogEnabled: controls.fogEnabled,
+              fogColor: controls.fogColor,
+              fogRangeStart: controls.fogRangeStart,
+              fogRangeEnd: controls.fogRangeEnd,
             })
           );
           resetTerrain();
@@ -161,6 +199,10 @@
         hillshadeShadowControl.onFinishChange(updateStyle);
         waterColorControl.onFinishChange(updateStyle);
         exaggerationControl.onFinishChange(resetTerrain);
+        fogEnabledControl.onFinishChange(updateStyle);
+        fogColorControl.onFinishChange(updateStyle);
+        fogRangeStartControl.onFinishChange(updateStyle);
+        fogRangeEndControl.onFinishChange(updateStyle);
       };
 
       mapboxgl.accessToken =
@@ -168,10 +210,10 @@
 
       const map = (window.map = new mapboxgl.Map({
         container: "map",
-        zoom: 11.25,
-        center: [-106.4908, 35.1035],
-        pitch: 54,
-        bearing: 0,
+        zoom: 11.38,
+        center: [-106.4192, 35.1691],
+        pitch: 82,
+        bearing: 55,
         hash: true,
         style: getStyle(controls),
       }));
