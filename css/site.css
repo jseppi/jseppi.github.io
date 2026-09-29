@@ -211,6 +211,28 @@ a:focus-visible, button:focus-visible{
   background:var(--on-vermilion);
   margin-inline:1.15em;
 }
+/* The repeated phrase is meant to run off both ends of the band — at desktop
+   widths that reads as a strip of moving type. On a phone it just looks
+   broken: the track runs ~2.5x the band and, being centred inside
+   overflow:hidden, gets chopped mid-letter at BOTH edges.
+
+   Note the band is deliberately wider than the viewport (left/right -16%), so
+   "fits inside the band" is not the test — text has to fit the SCREEN. One
+   line of the full phrase would have to drop to ~9px to manage that, so below
+   700px the two halves stack instead: drop the repeat and the separator, and
+   set the track in a column. Each half then sits well inside the viewport even
+   if Oswald fails to load and a wider fallback takes over. */
+@media (max-width:700px){
+  .band-track > :nth-child(n+4){ display:none; }
+  .band-track .sq{ display:none; }
+  .band-track{
+    flex-direction:column;
+    gap:.15em;
+    line-height:1.15;
+    text-align:center;
+    font-size:clamp(.85rem,4.2vw,1.25rem);
+  }
+}
 @keyframes band-in{
   from{ transform:rotate(-5deg) scaleX(0); }
   to{ transform:rotate(-5deg) scaleX(1); }
