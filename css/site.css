@@ -217,21 +217,13 @@ a:focus-visible, button:focus-visible{
    overflow:hidden, gets chopped mid-letter at BOTH edges.
 
    Note the band is deliberately wider than the viewport (left/right -16%), so
-   "fits inside the band" is not the test — text has to fit the SCREEN. One
-   line of the full phrase would have to drop to ~9px to manage that, so below
-   700px the two halves stack instead: drop the repeat and the separator, and
-   set the track in a column. Each half then sits well inside the viewport even
-   if Oswald fails to load and a wider fallback takes over. */
+   "fits inside the band" is not the test — text has to fit the SCREEN. Below
+   700px keep only the first phrase on a single line; it clears the viewport
+   even if Oswald fails to load and a wider fallback takes over. The role is
+   still spelled out in full in the About copy. */
 @media (max-width:700px){
-  .band-track > :nth-child(n+4){ display:none; }
-  .band-track .sq{ display:none; }
-  .band-track{
-    flex-direction:column;
-    gap:.15em;
-    line-height:1.15;
-    text-align:center;
-    font-size:clamp(.85rem,4.2vw,1.25rem);
-  }
+  .band-track > :nth-child(n+2){ display:none; }
+  .band-track{ font-size:clamp(.9rem,4.4vw,1.4rem); }
 }
 @keyframes band-in{
   from{ transform:rotate(-5deg) scaleX(0); }
