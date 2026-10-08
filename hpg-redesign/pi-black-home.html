@@ -12,6 +12,10 @@ header{border-bottom:4px solid var(--rule);background:var(--bg)}
 .btn{display:inline-block;font:400 17px/1 "Archivo Black",sans-serif;letter-spacing:.02em;text-transform:uppercase;padding:17px 26px;background:var(--btn);color:var(--btnink);transition:transform .1s}
 .btn:hover{transform:translateY(-2px)}.btn.o{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 3px var(--ink)}.btn.sm{font-size:14px;padding:12px 18px}.btn.a{background:var(--accent);color:var(--onacc)}
 .bw{filter:grayscale(1) contrast(1.3) brightness(1.02);display:block}
+.logo{width:52px;height:52px;border-radius:50%;background:#fff;object-fit:cover;display:block}
+.flogo{width:120px;height:120px;border-radius:50%;background:#fff;display:block;margin:0 0 22px;box-shadow:0 0 0 4px var(--rule)}
+.stk{position:absolute;right:22px;top:-40px;width:130px;height:130px;border-radius:50%;background:#fff;transform:rotate(8deg);box-shadow:0 6px 0 rgba(0,0,0,.5);z-index:3}
+@media(max-width:960px){.stk{position:relative;right:auto;top:auto;width:96px;height:96px;margin:0 0 18px auto}}
 /* poster hero */
 .herob{padding:46px 0 0;border-bottom:4px solid var(--rule)}
 .poster{max-width:860px;margin:0 auto;padding:0 22px;text-align:center}
@@ -57,9 +61,9 @@ footer{margin-top:90px;border-top:4px solid var(--rule);padding:40px 0 34px}foot
 .phbox{background:#000}.phbox img{filter:grayscale(1) contrast(1.35) brightness(.95);-webkit-mask-image:linear-gradient(transparent,#000 14%,#000 82%,transparent);mask-image:linear-gradient(transparent,#000 14%,#000 82%,transparent)}
 .herob{background:#000}.hl{color:var(--accent)}.cast .sq{background:#000}.cast .sq img{filter:grayscale(1) contrast(1.3) brightness(.95)}.cast .t:hover h3{color:var(--accent)}
 </style></head><body>
-<header><div class="wrap"><div class="top"><a class="brand" href="index.html"><img src="https://hydeparkgym.com/wp-content/themes/hpgtheme2/images/arm_red_100.png" alt="">Hyde Park Gym</a><ul><li><a href="#">Membership</a></li><li><a href="#">Trainers</a></li><li><a href="#">Chiropractic</a></li><li><a href="#">Contact</a></li></ul><a class="btn sm" href="#">Join HPG</a></div></div></header>
+<header><div class="wrap"><div class="top"><a class="brand" href="index.html"><img class="logo" src="img/logo-old.png" alt="Hyde Park Gym logo">Hyde Park Gym</a><ul><li><a href="#">Membership</a></li><li><a href="#">Trainers</a></li><li><a href="#">Chiropractic</a></li><li><a href="#">Contact</a></li></ul><a class="btn sm" href="#">Join HPG</a></div></div></header>
 <div class="herob"><div class="poster"><p class="pq">“Best gym in Austin if you want to avoid the gymbros, and work on real strength.”</p><p class="cr">— JKN, member</p></div>
-<div class="phbox"><img src="img/spotting.jpg" alt="A trainer smiling while spotting a bench press"></div>
+<div class="phbox"><img src="img/arm-outside.png" alt="The giant bicep and barbell on the outside of Hyde Park Gym, beside the HYDE PARK GYM window lettering" style="object-position:62% 20%;-webkit-mask-image:linear-gradient(#000 80%,transparent);mask-image:linear-gradient(#000 80%,transparent)"></div>
 <div class="poster"><h1 class="wm">Hyde Park <span class="hl">Gym</span></h1><p class="tagl">A friendly neighborhood gym · Austin, Texas</p><p class="rated">Open 7 days · All levels welcome</p><div class="ctas"><a class="btn" href="#">Free 7-day pass</a><a class="btn o" href="#">Schedule a tour</a></div></div></div>
 <section><div class="wrap"><div class="three"><div><b>Plenty of racks.</b><p>Always a rack or platform open. Never a wait.</p></div><div><b>No spa. No sauna.</b><p>Just iron, chalk and a place to work out comfortably.</p></div><div><b>All levels.</b><p>Rookies to record-holders, side by side.</p></div></div></div></section>
 <section><div class="wrap"><div class="gal"><figure><img class="bw" src="img/weights.jpg" alt="Racks of dumbbells and a trophy shelf at Hyde Park Gym"><figcaption>The dumbbell wall</figcaption></figure><figure><img class="bw" src="img/spotting.jpg" alt="A trainer smiling while spotting a bench press" style="object-position:50% 25%"><figcaption>Spotters on the platform</figcaption></figure><figure><img class="bw" src="img/member.jpg" alt="A smiling member outside the gym" style="object-position:78% 50%"><figcaption>Regulars, out by the tires</figcaption></figure></div></div></section>
@@ -70,11 +74,11 @@ footer{margin-top:90px;border-top:4px solid var(--rule);padding:40px 0 34px}foot
 <div class="qq"><p>“Always a squat rack or platform open because there’s so many.”</p><b>T Haney</b></div>
 <div class="qq"><p>“I have felt so comfortable coming to this gym (as a 5 foot tall woman) for the past 1.5 years.”</p><b>K Little</b></div>
 <div class="qq"><p>“Truly open to all levels… the lack of crowding and healthy gym culture make it worth it.”</p><b>E Taylor</b></div></div></div></section>
-<div class="blk"><div class="wrap"><div class="lm"><div><h2 class="h">Look for the <em>giant arm</em></h2><p class="ty">A gigantic bicep hoists a barbell over Guadalupe Street. If you can see the arm, you’ve found us.</p><a class="btn a" href="https://www.google.com/maps/search/?api=1&query=4125+Guadalupe+St+Austin+TX">Get directions</a></div>
+<div class="blk"><div class="wrap"><img class="stk" src="img/logo-old.png" alt=""><div class="lm"><div><h2 class="h">Look for the <em>giant arm</em></h2><p class="ty">A gigantic bicep hoists a barbell over Guadalupe Street. If you can see the arm, you’ve found us.</p><a class="btn a" href="https://www.google.com/maps/search/?api=1&query=4125+Guadalupe+St+Austin+TX">Get directions</a></div>
 <div class="pair"><figure><img class="bw" src="img/arm.png" alt="The giant bicep and barbell mounted on the outside of Hyde Park Gym"><figcaption>The arm · 4125 Guadalupe</figcaption></figure><figure><img class="bw" src="img/archive-flyer.webp" alt="A vintage Hyde Park Gym flyer of a bodybuilder flexing"><figcaption>From the archives</figcaption></figure></div></div></div></div>
 <section><div class="wrap"><h2 class="h">How to <em>get started</em></h2><p class="sub">No pressure, no sales gauntlet.</p><div class="st">
 <div><div class="n">1</div><h3>Try it free</h3><p>Grab a 7-day pass and train with us all week.</p><a href="#">Get the pass</a></div>
 <div><div class="n">2</div><h3>Come say hi</h3><p>Prefer a walkthrough first? Book a tour.</p><a href="#">Schedule a tour</a></div>
 <div><div class="n">3</div><h3>Join up</h3><p>Simple rates, no spa or sauna fees.</p><a href="#">See rates</a></div></div></div></section>
 <section><div class="wrap"><div class="vs"><div><h4>Hours</h4><p>Mon–Fri 6AM–9PM<br>Sat 7AM–7PM<br>Sun 8AM–7PM</p></div><div><h4>Find us</h4><p>4125 Guadalupe St.<br>Austin, TX 78751</p></div><div><h4>Call</h4><p>(512) 524-0450</p></div></div></div></section>
-<footer><div class="wrap"><div class="big">Hyde Park Gym</div><p>4125 Guadalupe St. · Austin, TX 78751 · (512) 524-0450 · Design mockup · photos from hydeparkgym.com</p></div></footer></body></html>
+<footer><div class="wrap"><img class="flogo" src="img/logo-old.png" alt="Hyde Park Gym logo"><div class="big">Hyde Park Gym</div><p>4125 Guadalupe St. · Austin, TX 78751 · (512) 524-0450 · Design mockup · photos from hydeparkgym.com</p></div></footer></body></html>
