@@ -21,6 +21,43 @@ header{border-bottom:4px solid var(--rule);background:var(--bg)}
 .medal img{position:absolute;left:5.6px;top:8.3px;width:75px;height:75px;display:block}
 footer .medal+.wrap{padding-top:44px}
 .farm{height:62px;display:block;margin:0 0 14px}
+/* rates + profile */
+.btn.w{background:#fff;color:#0a0a0a}
+.crumb{font:800 12px Inter,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--mute);padding:20px 0 0}.crumb a:hover{color:var(--ink)}.crumb b{color:var(--ink)}
+.feat{background:var(--accent);color:var(--onacc);border-block:4px solid var(--rule);padding:54px 0}
+.feat .wrap{display:grid;grid-template-columns:1.35fr .65fr;gap:40px;align-items:center}
+.feat .k{font:800 13px Inter,sans-serif;letter-spacing:.28em;text-transform:uppercase;margin:0 0 6px;opacity:.9}
+.feat .pr1{font:400 clamp(100px,19vw,240px)/.78 "Archivo Black",sans-serif;letter-spacing:-.06em;margin:0 0 14px}.feat .pr1 small{font-size:.2em;letter-spacing:-.02em;margin-left:.1em}
+.feat ul{list-style:none;margin:0;padding:0;font:800 clamp(17px,2vw,22px) Inter,sans-serif}.feat li{padding:5px 0 5px 34px;position:relative}.feat li::before{content:"";position:absolute;left:0;top:50%;width:20px;height:6px;margin-top:-3px;background:currentColor}
+.feat .go{text-align:right}.feat .btn{font-size:clamp(18px,2vw,24px);padding:22px 34px}
+.plist{border-top:8px solid var(--rule)}
+.prow{display:grid;grid-template-columns:1.5fr 1fr auto auto;gap:22px;align-items:center;padding:24px 0;border-bottom:3px solid var(--rule)}
+.prow h3{font:400 clamp(24px,3.2vw,40px)/1 "Archivo Black",sans-serif;letter-spacing:-.04em;margin:0}.prow h3 small{display:block;font:500 14px Inter,sans-serif;letter-spacing:0;color:var(--mute);margin-top:6px}
+.prow .nt{font:800 13px Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+.prow .amt{font:400 clamp(38px,5vw,64px)/1 "Archivo Black",sans-serif;letter-spacing:-.05em;text-align:right;min-width:3.2ch}
+.prow:hover{background:rgba(127,127,127,.09)}
+.tax{margin:18px 0 0;font-size:15px;color:var(--mute)}
+.try{background:var(--blk);color:var(--blkink);border-block:4px solid var(--rule);padding:60px 0}.try .wrap{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center}
+.try h2{font:400 clamp(34px,5.2vw,68px)/.94 "Archivo Black",sans-serif;letter-spacing:-.045em;margin:0 0 10px}.try p{margin:0;max-width:540px;font-size:19px;opacity:.85}.try .cc{display:flex;gap:14px;flex-wrap:wrap}
+/* profile */
+.pf{display:grid;grid-template-columns:.78fr 1.22fr;gap:54px;align-items:end;padding:34px 0 64px}
+.pf .pic{position:relative}.pf .pic img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 14%;display:block}
+.pf .st1{font:500 15px Inter,sans-serif;letter-spacing:.3em;text-transform:uppercase;margin:0 0 10px;color:var(--mute)}
+.pf h1{margin:0 0 20px;font:400 clamp(60px,10.4vw,142px)/.84 "Archivo Black",sans-serif;letter-spacing:-.055em}.pf h1 .hl{color:var(--accent)}
+.pf .lead2{font:700 clamp(19px,2.2vw,26px)/1.3 Inter,sans-serif;max-width:620px;margin:0 0 22px}
+.creds{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 28px}.creds span{font:800 12px Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;border:3px solid var(--ink);padding:7px 12px}
+.pf .ctas2{display:flex;gap:14px;flex-wrap:wrap}
+.pull{padding:70px 0;border-block:4px solid var(--rule)}.pull p{font:400 clamp(34px,6.4vw,92px)/.95 "Archivo Black",sans-serif;letter-spacing:-.05em;margin:0 0 18px;max-width:1000px}.pull p em{font-style:normal;color:var(--accent)}.pull b{font:800 13px Inter,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--mute)}
+.band-ph{position:relative;max-height:620px;overflow:hidden;border-bottom:4px solid var(--rule)}.band-ph img{width:100%;height:clamp(260px,46vw,620px);object-fit:cover;object-position:50% 70%;display:block}
+.band-ph figcaption{position:absolute;left:0;right:0;bottom:0;padding:50px 22px 16px;background:linear-gradient(transparent,rgba(0,0,0,.85));color:#eee;font:800 12px Inter,sans-serif;letter-spacing:.24em;text-transform:uppercase}
+.fmt{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}.fmt div{border-top:8px solid var(--rule);padding-top:16px}.fmt b{display:block;font:400 clamp(26px,3vw,38px)/.98 "Archivo Black",sans-serif;letter-spacing:-.04em;margin-bottom:8px}.fmt p{margin:0;color:var(--mute)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:start}.two p{margin:0 0 16px;font-size:20px;line-height:1.5}
+.frm{display:grid;gap:22px}.frm label{display:block;font:800 12px Inter,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-bottom:6px}
+.frm input,.frm textarea{width:100%;background:transparent;border:0;border-bottom:3px solid var(--rule);color:var(--ink);font:500 19px Inter,sans-serif;padding:8px 0 10px;border-radius:0;outline:none}.frm input:focus,.frm textarea:focus{border-bottom-color:var(--accent)}.frm textarea{min-height:130px;resize:vertical;border:3px solid var(--rule);padding:12px}
+.frm .mk{font:500 13px Inter,sans-serif;color:var(--mute);margin:0}
+.more{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.more a{display:block}.more .sq{aspect-ratio:1;overflow:hidden;background:#000}.more img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block;filter:grayscale(1) contrast(1.3)}.more b{display:block;font:400 22px/1 "Archivo Black",sans-serif;letter-spacing:-.035em;text-transform:uppercase;margin:12px 0 4px}.more span{font:800 12px Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}.more a:hover b{color:var(--accent)}
+@media(max-width:960px){.feat .wrap,.try .wrap,.pf,.two{grid-template-columns:1fr}.feat .go{text-align:left}.prow{grid-template-columns:1fr auto;gap:10px 18px}.prow .nt{grid-column:1}.prow .amt{grid-row:1;grid-column:2;text-align:right}.prow .btn{grid-column:1/-1;text-align:center}.fmt,.more{grid-template-columns:1fr}.pf .pic{max-width:420px;order:2}.pf>div:last-child{order:1}.more{grid-template-columns:1fr 1fr 1fr}}
+@media(max-width:620px){.more{grid-template-columns:1fr 1fr}}
 /* poster hero */
 .herob{padding:46px 0 0;border-bottom:4px solid var(--rule)}
 .poster{max-width:860px;margin:0 auto;padding:0 22px;text-align:center}
@@ -52,7 +89,7 @@ h2.h{font:400 clamp(40px,6.4vw,84px)/.92 "Archivo Black",sans-serif;letter-spaci
 footer{margin-top:90px;border-top:4px solid var(--rule);padding:40px 0 34px}footer .big{font:400 clamp(40px,10vw,128px)/.9 "Archivo Black",sans-serif;letter-spacing:-.05em;margin:0 0 14px}footer p{margin:0;font-size:14px;color:var(--mute)}
 /* cast */
 .cherob{padding:56px 0 54px;border-bottom:4px solid var(--rule);background:var(--accent);color:var(--onacc)}.cherob.bk{background:#000;color:var(--ink)}
-.cherob .st1{font:500 15px Inter,sans-serif;letter-spacing:.3em;text-transform:uppercase;margin:0 0 10px;opacity:.8}.cherob h1{margin:0 0 14px;font:400 clamp(60px,12.5vw,170px)/.85 "Archivo Black",sans-serif;letter-spacing:-.05em}.cherob h1 .hl{color:var(--accent)}.cherob p.l{margin:0;font:700 clamp(17px,2vw,22px) Inter,sans-serif;max-width:560px}
+.cherob .st1{font:500 15px Inter,sans-serif;letter-spacing:.3em;text-transform:uppercase;margin:0 0 10px;opacity:.8}.cherob h1{margin:0 0 14px;font:400 clamp(42px,12.5vw,170px)/.85 "Archivo Black",sans-serif;letter-spacing:-.05em}.cherob h1 .hl{color:var(--accent)}.cherob p.l{margin:0;font:700 clamp(17px,2vw,22px) Inter,sans-serif;max-width:560px}
 .filters{display:flex;gap:6px 26px;flex-wrap:wrap;margin:0 0 14px;border-bottom:4px solid var(--rule)}.filters button{font:400 15px/1 "Archivo Black",sans-serif;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;background:none;color:var(--mute);border:0;border-bottom:6px solid transparent;padding:10px 0 12px;margin-bottom:-4px}.filters button.on{color:var(--ink);border-bottom-color:var(--accent)}.filters button:hover{color:var(--ink)}
 .count{font:800 13px Inter,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--mute);margin:18px 0 26px}
 .cast{display:grid;grid-template-columns:repeat(3,1fr);gap:30px 22px}.cast .t{display:flex;flex-direction:column}.cast .t.hide{display:none}
@@ -66,7 +103,7 @@ footer{margin-top:90px;border-top:4px solid var(--rule);padding:40px 0 34px}foot
 .phbox{background:#000}.phbox img{filter:grayscale(1) contrast(1.35) brightness(.95);-webkit-mask-image:linear-gradient(transparent,#000 14%,#000 82%,transparent);mask-image:linear-gradient(transparent,#000 14%,#000 82%,transparent)}
 .herob{background:#000}.hl{color:var(--accent)}h2.h em,.blk h2.h em{background:none;color:var(--accent);padding:0}.cast .sq{background:#000}.cast .sq img{filter:grayscale(1) contrast(1.3) brightness(.95)}.cast .t:hover h3{color:var(--accent)}
 </style></head><body>
-<header><div class="wrap"><div class="top"><a class="brand" href="index.html"><img src="https://hydeparkgym.com/wp-content/themes/hpgtheme2/images/arm_red_100.png" alt="">Hyde Park Gym</a><ul><li><a href="#">Membership</a></li><li><a href="#">Trainers</a></li><li><a href="#">Chiropractic</a></li><li><a href="#">Contact</a></li></ul><a class="btn sm" href="#">Join HPG</a></div></div></header>
+<header><div class="wrap"><div class="top"><a class="brand" href="pi-black-home.html"><img src="https://hydeparkgym.com/wp-content/themes/hpgtheme2/images/arm_red_100.png" alt="">Hyde Park Gym</a><ul><li><a href="pi-black-rates.html">Membership</a></li><li><a href="pi-black-trainers.html">Trainers</a></li><li><a href="#">Chiropractic</a></li><li><a href="#">Contact</a></li></ul><a class="btn sm" href="pi-black-rates.html">Join HPG</a></div></div></header>
 <div class="herob"><div class="poster"><p class="pq">“Best gym in Austin if you want to avoid the gymbros, and work on real strength.”</p><p class="cr">— JKN, member</p></div>
 <div class="phbox"><img src="img/sunset.jpg" alt="The giant arm silhouetted against an Austin sunset" style="object-position:8% 30%;-webkit-mask-image:linear-gradient(#000 80%,transparent);mask-image:linear-gradient(#000 80%,transparent)"></div>
 <div class="poster"><h1 class="wm">Hyde Park <span class="hl">Gym</span></h1><p class="tagl">A friendly neighborhood gym · Austin, Texas</p><p class="rated">Open 7 days · All levels welcome</p><div class="ctas"><a class="btn" href="#">Free 7-day pass</a><a class="btn o" href="#">Schedule a tour</a></div></div></div>
@@ -84,6 +121,6 @@ footer{margin-top:90px;border-top:4px solid var(--rule);padding:40px 0 34px}foot
 <section><div class="wrap"><h2 class="h">How to <em>get started</em></h2><p class="sub">No pressure, no sales gauntlet.</p><div class="st">
 <div><div class="n">1</div><h3>Try it free</h3><p>Grab a 7-day pass and train with us all week.</p><a href="#">Get the pass</a></div>
 <div><div class="n">2</div><h3>Come say hi</h3><p>Prefer a walkthrough first? Book a tour.</p><a href="#">Schedule a tour</a></div>
-<div><div class="n">3</div><h3>Join up</h3><p>Simple rates, no spa or sauna fees.</p><a href="#">See rates</a></div></div></div></section>
+<div><div class="n">3</div><h3>Join up</h3><p>Simple rates, no spa or sauna fees.</p><a href="pi-black-rates.html">See rates</a></div></div></div></section>
 <section><div class="wrap"><div class="vs"><div><h4>Hours</h4><p>Mon–Fri 6AM–9PM<br>Sat 7AM–7PM<br>Sun 8AM–7PM</p></div><div><h4>Find us</h4><p>4125 Guadalupe St.<br>Austin, TX 78751</p></div><div><h4>Call</h4><p>(512) 524-0450</p></div></div></div></section>
 <footer><span class="medal"><img src="img/logo-old.png" alt=""></span><div class="wrap"><img class="farm" src="https://hydeparkgym.com/wp-content/themes/hpgtheme2/images/arm_red_100.png" alt=""><div class="big">Hyde Park Gym</div><p>4125 Guadalupe St. · Austin, TX 78751 · (512) 524-0450 · Design mockup · photos from hydeparkgym.com</p></div></footer></body></html>
