@@ -16,6 +16,10 @@ header{border-bottom:4px solid var(--rule);background:var(--bg)}
 .flogo{width:120px;height:120px;border-radius:50%;background:#fff;display:block;margin:0 0 22px;box-shadow:0 0 0 4px var(--rule)}
 .stk{position:absolute;right:22px;top:-40px;width:130px;height:130px;border-radius:50%;background:#fff;transform:rotate(8deg);box-shadow:0 6px 0 rgba(0,0,0,.5);z-index:3}
 @media(max-width:960px){.stk{position:relative;right:auto;top:auto;width:96px;height:96px;margin:0 0 18px auto}}
+.blk,footer{position:relative}
+.medal{position:absolute;left:50%;top:-38px;width:72px;height:72px;margin-left:-36px;border-radius:50%;background:#fff;box-shadow:0 0 0 7px var(--bg);z-index:3}
+footer .medal+.wrap{padding-top:34px}
+.farm{height:62px;display:block;margin:0 0 14px}
 /* poster hero */
 .herob{padding:46px 0 0;border-bottom:4px solid var(--rule)}
 .poster{max-width:860px;margin:0 auto;padding:0 22px;text-align:center}
@@ -61,7 +65,7 @@ footer{margin-top:90px;border-top:4px solid var(--rule);padding:40px 0 34px}foot
 .phbox{background:#000}.phbox img{filter:grayscale(1) contrast(1.35) brightness(.95);-webkit-mask-image:linear-gradient(transparent,#000 14%,#000 82%,transparent);mask-image:linear-gradient(transparent,#000 14%,#000 82%,transparent)}
 .herob{background:#000}.hl{color:var(--accent)}.cast .sq{background:#000}.cast .sq img{filter:grayscale(1) contrast(1.3) brightness(.95)}.cast .t:hover h3{color:var(--accent)}
 </style></head><body>
-<header><div class="wrap"><div class="top"><a class="brand" href="index.html"><img class="logo" src="img/logo-old.png" alt="Hyde Park Gym logo">Hyde Park Gym</a><ul><li><a href="#">Membership</a></li><li><a class="on" href="#">Trainers</a></li><li><a href="#">Chiropractic</a></li><li><a href="#">Contact</a></li></ul><a class="btn sm" href="#">Join HPG</a></div></div></header>
+<header><div class="wrap"><div class="top"><a class="brand" href="index.html"><img src="https://hydeparkgym.com/wp-content/themes/hpgtheme2/images/arm_red_100.png" alt="">Hyde Park Gym</a><ul><li><a href="#">Membership</a></li><li><a class="on" href="#">Trainers</a></li><li><a href="#">Chiropractic</a></li><li><a href="#">Contact</a></li></ul><a class="btn sm" href="#">Join HPG</a></div></div></header>
 <div class="cherob bk"><div class="wrap"><p class="st1">Starring</p><h1>The <span class="hl">Coaches</span></h1><p class="l">Seventeen trainers, one friendly gym. Find your match below, or let us pick for you.</p></div></div>
 <section style="padding-top:56px"><div class="wrap"><div class="filters" id="f"><button class="on" data-f="">All trainers</button><button data-f="Beginners">Beginners</button><button data-f="Powerlifting">Powerlifting</button><button data-f="Olympic lifting">Olympic lifting</button><button data-f="Over 50">Over 50</button><button data-f="Women">Women</button><button data-f="Rehab & PT">Rehab & PT</button></div><div class="count" id="c"></div><div class="cast" id="g">
 <a class="t" data-tags="Olympic lifting|Rehab & PT|Powerlifting" href="https://hydeparkgym.com/trainers/jennifer-chu"><div class="sq"><img loading="lazy" src="https://hydeparkgym.com/wp-content/uploads/2009/01/jennifer-chu-Head.jpg" alt="Jennifer Chu"></div><div class="b"><h3>Jennifer Chu</h3><p>Doctor of Physical Therapy and national-level Olympic weightlifter</p><div class="tags">Olympic lifting / Rehab & PT / Powerlifting</div><span class="go">View profile →</span></div></a>
@@ -83,7 +87,7 @@ footer{margin-top:90px;border-top:4px solid var(--rule);padding:40px 0 34px}foot
 <a class="t" data-tags="" href="https://hydeparkgym.com/trainers/stephen-moore"><div class="sq"><img loading="lazy" src="https://hydeparkgym.com/wp-content/uploads/2026/05/stephen-moore-thumbnail.jpeg" alt="Stephen Moore"></div><div class="b"><h3>Stephen Moore</h3><p>Strength coach focused on long-term progress</p><span class="go">View profile →</span></div></a>
 </div></div></section>
 <section><div class="wrap"><div class="memo"><div><h2>Not sure who’s right for you?</h2><p>Share your goals, fitness history, preferred days and times, and why you chose HPG. We’ll set you up with the best match.</p></div><a class="btn" href="https://hydeparkgym.com/contact-training-manager">Contact the training manager</a></div></div></section>
-<footer><div class="wrap"><img class="flogo" src="img/logo-old.png" alt="Hyde Park Gym logo"><div class="big">Hyde Park Gym</div><p>4125 Guadalupe St. · Austin, TX 78751 · (512) 524-0450 · Design mockup · photos from hydeparkgym.com</p></div></footer>
+<footer><img class="medal" src="img/logo-old.png" alt=""><div class="wrap"><img class="farm" src="https://hydeparkgym.com/wp-content/themes/hpgtheme2/images/arm_red_100.png" alt=""><div class="big">Hyde Park Gym</div><p>4125 Guadalupe St. · Austin, TX 78751 · (512) 524-0450 · Design mockup · photos from hydeparkgym.com</p></div></footer>
 <script>
 var b=document.querySelectorAll('#f button'),t=document.querySelectorAll('#g .t'),c=document.getElementById('c');
 function run(f){var n=0;t.forEach(function(x){var ok=!f||x.dataset.tags.split('|').indexOf(f)>-1;x.classList.toggle('hide',!ok);if(ok)n++});c.textContent=n+(n==1?' coach':' coaches')+(f?' · '+f:' on staff')}

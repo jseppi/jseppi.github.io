@@ -16,6 +16,10 @@ header{border-bottom:4px solid var(--rule);background:var(--bg)}
 .flogo{width:120px;height:120px;border-radius:50%;background:#fff;display:block;margin:0 0 22px;box-shadow:0 0 0 4px var(--rule)}
 .stk{position:absolute;right:22px;top:-40px;width:130px;height:130px;border-radius:50%;background:#fff;transform:rotate(8deg);box-shadow:0 6px 0 rgba(0,0,0,.5);z-index:3}
 @media(max-width:960px){.stk{position:relative;right:auto;top:auto;width:96px;height:96px;margin:0 0 18px auto}}
+.blk,footer{position:relative}
+.medal{position:absolute;left:50%;top:-38px;width:72px;height:72px;margin-left:-36px;border-radius:50%;background:#fff;box-shadow:0 0 0 7px var(--bg);z-index:3}
+footer .medal+.wrap{padding-top:34px}
+.farm{height:62px;display:block;margin:0 0 14px}
 /* poster hero */
 .herob{padding:46px 0 0;border-bottom:4px solid var(--rule)}
 .poster{max-width:860px;margin:0 auto;padding:0 22px;text-align:center}
@@ -83,7 +87,7 @@ footer{margin-top:90px;border-top:4px solid var(--rule);padding:40px 0 34px}foot
 <a class="t" data-tags="" href="https://hydeparkgym.com/trainers/stephen-moore"><div class="sq"><img loading="lazy" src="https://hydeparkgym.com/wp-content/uploads/2026/05/stephen-moore-thumbnail.jpeg" alt="Stephen Moore"></div><div class="b"><h3>Stephen Moore</h3><p>Strength coach focused on long-term progress</p><span class="go">View profile →</span></div></a>
 </div></div></section>
 <section><div class="wrap"><div class="memo"><div><h2>Not sure who’s right for you?</h2><p>Share your goals, fitness history, preferred days and times, and why you chose HPG. We’ll set you up with the best match.</p></div><a class="btn" href="https://hydeparkgym.com/contact-training-manager">Contact the training manager</a></div></div></section>
-<footer><div class="wrap"><div class="big">Hyde Park Gym</div><p>4125 Guadalupe St. · Austin, TX 78751 · (512) 524-0450 · Design mockup · photos from hydeparkgym.com</p></div></footer>
+<footer><div class="wrap"><img class="farm" src="https://hydeparkgym.com/wp-content/themes/hpgtheme2/images/arm_red_100.png" alt=""><div class="big">Hyde Park Gym</div><p>4125 Guadalupe St. · Austin, TX 78751 · (512) 524-0450 · Design mockup · photos from hydeparkgym.com</p></div></footer>
 <script>
 var b=document.querySelectorAll('#f button'),t=document.querySelectorAll('#g .t'),c=document.getElementById('c');
 function run(f){var n=0;t.forEach(function(x){var ok=!f||x.dataset.tags.split('|').indexOf(f)>-1;x.classList.toggle('hide',!ok);if(ok)n++});c.textContent=n+(n==1?' coach':' coaches')+(f?' · '+f:' on staff')}
