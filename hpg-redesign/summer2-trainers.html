@@ -136,8 +136,7 @@ footer .wrap{padding-top:46px}footer .farm{height:132px;width:132px;border-radiu
 <div class="phero"><div class="wrap"><span class="pill">Trainers for all your needs</span>
 <h1 class="ptitle"><span>Meet the</span><span class="i">Coaches</span></h1>
 <p class="pl">Find your match below, or let us pick for you.</p></div></div>
-<section style="padding-top:56px"><div class="wrap"><div class="filters" id="f"><button class="on" data-f="">All trainers</button><button data-f="Beginners">Beginners</button><button data-f="Powerlifting">Powerlifting</button><button data-f="Olympic lifting">Olympic lifting</button><button data-f="Over 50">Over 50</button><button data-f="Women">Women</button><button data-f="Rehab & PT">Rehab & PT</button></div><div class="count" id="c"></div>
-<div class="cast" id="g">
+<section style="padding-top:56px"><div class="wrap"><div class="cast" id="g">
 <a class="tc" data-tags="Olympic lifting|Rehab & PT|Powerlifting" href="https://hydeparkgym.com/trainers/jennifer-chu"><div class="sq"><img loading="lazy" src="https://hydeparkgym.com/wp-content/uploads/2009/01/jennifer-chu-Head.jpg" alt="Jennifer Chu"></div><div class="b"><h3>Jennifer Chu</h3><p>Doctor of Physical Therapy and national-level Olympic weightlifter</p><div class="tags">Olympic lifting / Rehab & PT / Powerlifting</div><span class="go">View profile →</span></div></a>
 <a class="tc" data-tags="Beginners" href="https://hydeparkgym.com/trainers/sage-westfall"><div class="sq"><img loading="lazy" src="https://hydeparkgym.com/wp-content/uploads/2022/06/SAGE-headshot.jpg" alt="Sage Westfall"></div><div class="b"><h3>Sage Westfall</h3><p>Strength training and building healthy habits</p><div class="tags">Beginners</div><span class="go">View profile →</span></div></a>
 <a class="tc" data-tags="Powerlifting" href="https://hydeparkgym.com/trainers/rachelle-maclellan"><div class="sq"><img loading="lazy" src="https://hydeparkgym.com/wp-content/uploads/2024/10/rachelle-headshot.png" alt="Rachelle MacLellan"></div><div class="b"><h3>Rachelle MacLellan</h3><p>18+ years in powerlifting, bodybuilding and strongman, plus nutrition coaching</p><div class="tags">Powerlifting</div><span class="go">View profile →</span></div></a>
@@ -158,10 +157,6 @@ footer .wrap{padding-top:46px}footer .farm{height:132px;width:132px;border-radiu
 </div></div></section>
 <section><div class="wrap"><div class="memo"><div><h2>Not sure who’s right for you?</h2><p>Share your goals, fitness history, preferred days and times, and why you chose HPG. We’ll set you up with the best match.</p></div><a class="btn c" href="https://hydeparkgym.com/contact-training-manager">Contact the training manager</a></div></div></section>
 <section><div class="wrap"><div class="vs"><div><h4>Hours</h4><p>Mon–Fri 6AM–9PM<br>Sat 7AM–7PM<br>Sun 8AM–7PM</p></div><div><h4>Find us</h4><p>4125 Guadalupe St.<br>Austin, TX 78751</p></div><div><h4>Call</h4><p>(512) 524-0450</p></div></div></div></section>
-<script>
-var b=document.querySelectorAll('#f button'),t=document.querySelectorAll('#g .tc'),c=document.getElementById('c');
-function run(f){var n=0;t.forEach(function(x){var ok=!f||x.dataset.tags.split('|').indexOf(f)>-1;x.classList.toggle('hide',!ok);if(ok)n++});c.textContent=n+(n==1?' coach':' coaches')+(f?' · '+f:' on staff')}
-b.forEach(function(x){x.onclick=function(){b.forEach(function(y){y.classList.remove('on')});x.classList.add('on');run(x.dataset.f)}});run('');
-</script>
+
 <footer><div class="bars"></div><div class="wrap"><img class="farm" src="img/logo-old.png" alt="Hyde Park Gym, Inc."><b>Come on in. The door’s open.</b><p>Hyde Park Gym · 4125 Guadalupe St. · Austin, TX · (512) 524-0450<br>Design mockup · photos from hydeparkgym.com</p></div></footer>
 </body></html>
